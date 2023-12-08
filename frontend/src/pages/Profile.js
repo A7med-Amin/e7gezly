@@ -35,9 +35,9 @@ function Profile() {
     }
   
     return (
-        <Layout>
+      <Layout>
         <section>
-          <h1>Profile</h1>
+          <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '20px'}}>Profile</h1>
           <EditUser onAddMeetup={editUser} />
         </section>
       </Layout>
