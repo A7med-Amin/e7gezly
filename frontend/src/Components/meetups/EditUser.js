@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Card from "../ui/Card";
 import classes from './NewStadiumForm.module.css';
@@ -168,199 +167,199 @@ function EditUser(props) {
                     <div className="options">
                         <label style = {{fontWeight : 'bold'}} htmlFor="nationality">Nationality</label>
                         <select name="nationality" id="nationality" ref={NationRef} style={{ backgroundColor: "#273c75", color: 'whitesmoke' , padding : '10px' , borderRadius : '10px' , fontWeight : 'bold' , appearance : 'none' }}>
-                            <option value={loadedMeetups.nationality} selected disabled hidden>{loadedMeetups.nationality}</option>
-                            <option value="afghan">Afghan</option>
-                            <option value="albanian">Albanian</option>
-                            <option value="algerian">Algerian</option>
-                            <option value="american">American</option>
-                            <option value="andorran">Andorran</option>
-                            <option value="angolan">Angolan</option>
-                            <option value="antiguans">Antiguans</option>
-                            <option value="argentinean">Argentinean</option>
-                            <option value="armenian">Armenian</option>
-                            <option value="australian">Australian</option>
-                            <option value="austrian">Austrian</option>
-                            <option value="azerbaijani">Azerbaijani</option>
-                            <option value="bahamian">Bahamian</option>
-                            <option value="bahraini">Bahraini</option>
-                            <option value="bangladeshi">Bangladeshi</option>
-                            <option value="barbadian">Barbadian</option>
-                            <option value="barbudans">Barbudans</option>
-                            <option value="batswana">Batswana</option>
-                            <option value="belarusian">Belarusian</option>
-                            <option value="belgian">Belgian</option>
-                            <option value="belizean">Belizean</option>
-                            <option value="beninese">Beninese</option>
-                            <option value="bhutanese">Bhutanese</option>
-                            <option value="bolivian">Bolivian</option>
-                            <option value="bosnian">Bosnian</option>
-                            <option value="brazilian">Brazilian</option>
-                            <option value="british">British</option>
-                            <option value="bruneian">Bruneian</option>
-                            <option value="bulgarian">Bulgarian</option>
-                            <option value="burkinabe">Burkinabe</option>
-                            <option value="burmese">Burmese</option>
-                            <option value="burundian">Burundian</option>
-                            <option value="cambodian">Cambodian</option>
-                            <option value="cameroonian">Cameroonian</option>
-                            <option value="canadian">Canadian</option>
-                            <option value="cape verdean">Cape Verdean</option>
-                            <option value="central african">Central African</option>
-                            <option value="chadian">Chadian</option>
-                            <option value="chilean">Chilean</option>
-                            <option value="chinese">Chinese</option>
-                            <option value="colombian">Colombian</option>
-                            <option value="comoran">Comoran</option>
-                            <option value="congolese">Congolese</option>
-                            <option value="costa rican">Costa Rican</option>
-                            <option value="croatian">Croatian</option>
-                            <option value="cuban">Cuban</option>
-                            <option value="cypriot">Cypriot</option>
-                            <option value="czech">Czech</option>
-                            <option value="danish">Danish</option>
-                            <option value="djibouti">Djibouti</option>
-                            <option value="dominican">Dominican</option>
-                            <option value="dutch">Dutch</option>
-                            <option value="east timorese">East Timorese</option>
-                            <option value="ecuadorean">Ecuadorean</option>
-                            <option value="egyptian">Egyptian</option>
-                            <option value="emirian">Emirian</option>
-                            <option value="equatorial guinean">Equatorial Guinean</option>
-                            <option value="eritrean">Eritrean</option>
-                            <option value="estonian">Estonian</option>
-                            <option value="ethiopian">Ethiopian</option>
-                            <option value="fijian">Fijian</option>
-                            <option value="filipino">Filipino</option>
-                            <option value="finnish">Finnish</option>
-                            <option value="french">French</option>
-                            <option value="gabonese">Gabonese</option>
-                            <option value="gambian">Gambian</option>
-                            <option value="georgian">Georgian</option>
-                            <option value="german">German</option>
-                            <option value="ghanaian">Ghanaian</option>
-                            <option value="greek">Greek</option>
-                            <option value="grenadian">Grenadian</option>
-                            <option value="guatemalan">Guatemalan</option>
-                            <option value="guinea-bissauan">Guinea-Bissauan</option>
-                            <option value="guinean">Guinean</option>
-                            <option value="guyanese">Guyanese</option>
-                            <option value="haitian">Haitian</option>
-                            <option value="herzegovinian">Herzegovinian</option>
-                            <option value="honduran">Honduran</option>
-                            <option value="hungarian">Hungarian</option>
-                            <option value="icelander">Icelander</option>
-                            <option value="indian">Indian</option>
-                            <option value="indonesian">Indonesian</option>
-                            <option value="iranian">Iranian</option>
-                            <option value="iraqi">Iraqi</option>
-                            <option value="irish">Irish</option>
-                            <option value="italian">Italian</option>
-                            <option value="ivorian">Ivorian</option>
-                            <option value="jamaican">Jamaican</option>
-                            <option value="japanese">Japanese</option>
-                            <option value="jordanian">Jordanian</option>
-                            <option value="kazakhstani">Kazakhstani</option>
-                            <option value="kenyan">Kenyan</option>
-                            <option value="kittian and nevisian">Kittian and Nevisian</option>
-                            <option value="kuwaiti">Kuwaiti</option>
-                            <option value="kyrgyz">Kyrgyz</option>
-                            <option value="laotian">Laotian</option>
-                            <option value="latvian">Latvian</option>
-                            <option value="lebanese">Lebanese</option>
-                            <option value="liberian">Liberian</option>
-                            <option value="libyan">Libyan</option>
-                            <option value="liechtensteiner">Liechtensteiner</option>
-                            <option value="lithuanian">Lithuanian</option>
-                            <option value="luxembourger">Luxembourger</option>
-                            <option value="macedonian">Macedonian</option>
-                            <option value="malagasy">Malagasy</option>
-                            <option value="malawian">Malawian</option>
-                            <option value="malaysian">Malaysian</option>
-                            <option value="maldivan">Maldivan</option>
-                            <option value="malian">Malian</option>
-                            <option value="maltese">Maltese</option>
-                            <option value="marshallese">Marshallese</option>
-                            <option value="mauritanian">Mauritanian</option>
-                            <option value="mauritian">Mauritian</option>
-                            <option value="mexican">Mexican</option>
-                            <option value="micronesian">Micronesian</option>
-                            <option value="moldovan">Moldovan</option>
-                            <option value="monacan">Monacan</option>
-                            <option value="mongolian">Mongolian</option>
-                            <option value="moroccan">Moroccan</option>
-                            <option value="mosotho">Mosotho</option>
-                            <option value="motswana">Motswana</option>
-                            <option value="mozambican">Mozambican</option>
-                            <option value="namibian">Namibian</option>
-                            <option value="nauruan">Nauruan</option>
-                            <option value="nepalese">Nepalese</option>
-                            <option value="new zealander">New Zealander</option>
-                            <option value="ni-vanuatu">Ni-Vanuatu</option>
-                            <option value="nicaraguan">Nicaraguan</option>
-                            <option value="nigerien">Nigerien</option>
-                            <option value="north korean">North Korean</option>
-                            <option value="northern irish">Northern Irish</option>
-                            <option value="norwegian">Norwegian</option>
-                            <option value="omani">Omani</option>
-                            <option value="Palestine">Palestine</option>
-                            <option value="pakistani">Pakistani</option>
-                            <option value="palauan">Palauan</option>
-                            <option value="panamanian">Panamanian</option>
-                            <option value="papua new guinean">Papua New Guinean</option>
-                            <option value="paraguayan">Paraguayan</option>
-                            <option value="peruvian">Peruvian</option>
-                            <option value="polish">Polish</option>
-                            <option value="portuguese">Portuguese</option>
-                            <option value="qatari">Qatari</option>
-                            <option value="romanian">Romanian</option>
-                            <option value="russian">Russian</option>
-                            <option value="rwandan">Rwandan</option>
-                            <option value="saint lucian">Saint Lucian</option>
-                            <option value="salvadoran">Salvadoran</option>
-                            <option value="samoan">Samoan</option>
-                            <option value="san marinese">San Marinese</option>
-                            <option value="sao tomean">Sao Tomean</option>
-                            <option value="saudi">Saudi</option>
-                            <option value="scottish">Scottish</option>
-                            <option value="senegalese">Senegalese</option>
-                            <option value="serbian">Serbian</option>
-                            <option value="seychellois">Seychellois</option>
-                            <option value="sierra leonean">Sierra Leonean</option>
-                            <option value="singaporean">Singaporean</option>
-                            <option value="slovakian">Slovakian</option>
-                            <option value="slovenian">Slovenian</option>
-                            <option value="solomon islander">Solomon Islander</option>
-                            <option value="somali">Somali</option>
-                            <option value="south african">South African</option>
-                            <option value="south korean">South Korean</option>
-                            <option value="spanish">Spanish</option>
-                            <option value="sri lankan">Sri Lankan</option>
-                            <option value="sudanese">Sudanese</option>
-                            <option value="surinamer">Surinamer</option>
-                            <option value="swazi">Swazi</option>
-                            <option value="swedish">Swedish</option>
-                            <option value="swiss">Swiss</option>
-                            <option value="syrian">Syrian</option>
-                            <option value="taiwanese">Taiwanese</option>
-                            <option value="tajik">Tajik</option>
-                            <option value="tanzanian">Tanzanian</option>
-                            <option value="thai">Thai</option>
-                            <option value="togolese">Togolese</option>
-                            <option value="tongan">Tongan</option>
-                            <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
-                            <option value="tunisian">Tunisian</option>
-                            <option value="turkish">Turkish</option>
-                            <option value="tuvaluan">Tuvaluan</option>
-                            <option value="ugandan">Ugandan</option>
-                            <option value="ukrainian">Ukrainian</option>
-                            <option value="uruguayan">Uruguayan</option>
-                            <option value="uzbekistani">Uzbekistani</option>
-                            <option value="venezuelan">Venezuelan</option>
-                            <option value="vietnamese">Vietnamese</option>
-                            <option value="welsh">Welsh</option>
-                            <option value="yemenite">Yemenite</option>
-                            <option value="zambian">Zambian</option>
-                            <option value="zimbabwean">Zimbabwean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}} value={loadedMeetups.nationality} selected disabled hidden>{loadedMeetups.nationality}</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}} value="afghan">Afghan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}} value="albanian">Albanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="algerian">Algerian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="american">American</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="andorran">Andorran</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="angolan">Angolan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="antiguans">Antiguans</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="argentinean">Argentinean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="armenian">Armenian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="australian">Australian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="austrian">Austrian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="azerbaijani">Azerbaijani</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bahamian">Bahamian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bahraini">Bahraini</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bangladeshi">Bangladeshi</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="barbadian">Barbadian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="barbudans">Barbudans</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="batswana">Batswana</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="belarusian">Belarusian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="belgian">Belgian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="belizean">Belizean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="beninese">Beninese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bhutanese">Bhutanese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bolivian">Bolivian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bosnian">Bosnian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="brazilian">Brazilian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="british">British</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bruneian">Bruneian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="bulgarian">Bulgarian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="burkinabe">Burkinabe</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="burmese">Burmese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="burundian">Burundian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="cambodian">Cambodian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="cameroonian">Cameroonian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="canadian">Canadian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="cape verdean">Cape Verdean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="central african">Central African</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="chadian">Chadian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="chilean">Chilean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="chinese">Chinese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="colombian">Colombian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="comoran">Comoran</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="congolese">Congolese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="costa rican">Costa Rican</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="croatian">Croatian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="cuban">Cuban</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="cypriot">Cypriot</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="czech">Czech</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="danish">Danish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="djibouti">Djibouti</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="dominican">Dominican</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="dutch">Dutch</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="east timorese">East Timorese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ecuadorean">Ecuadorean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="egyptian">Egyptian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="emirian">Emirian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="equatorial guinean">Equatorial Guinean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="eritrean">Eritrean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="estonian">Estonian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ethiopian">Ethiopian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="fijian">Fijian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="filipino">Filipino</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="finnish">Finnish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="french">French</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="gabonese">Gabonese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="gambian">Gambian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="georgian">Georgian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="german">German</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ghanaian">Ghanaian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="greek">Greek</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="grenadian">Grenadian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="guatemalan">Guatemalan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="guinea-bissauan">Guinea-Bissauan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="guinean">Guinean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="guyanese">Guyanese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="haitian">Haitian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="herzegovinian">Herzegovinian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="honduran">Honduran</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="hungarian">Hungarian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="icelander">Icelander</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="indian">Indian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="indonesian">Indonesian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="iranian">Iranian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="iraqi">Iraqi</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="irish">Irish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="italian">Italian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ivorian">Ivorian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="jamaican">Jamaican</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="japanese">Japanese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="jordanian">Jordanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="kazakhstani">Kazakhstani</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="kenyan">Kenyan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="kittian and nevisian">Kittian and Nevisian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="kuwaiti">Kuwaiti</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="kyrgyz">Kyrgyz</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="laotian">Laotian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="latvian">Latvian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="lebanese">Lebanese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="liberian">Liberian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="libyan">Libyan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="liechtensteiner">Liechtensteiner</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="lithuanian">Lithuanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="luxembourger">Luxembourger</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="macedonian">Macedonian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="malagasy">Malagasy</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="malawian">Malawian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="malaysian">Malaysian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="maldivan">Maldivan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="malian">Malian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="maltese">Maltese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="marshallese">Marshallese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="mauritanian">Mauritanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="mauritian">Mauritian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="mexican">Mexican</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="micronesian">Micronesian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="moldovan">Moldovan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="monacan">Monacan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="mongolian">Mongolian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="moroccan">Moroccan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="mosotho">Mosotho</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="motswana">Motswana</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="mozambican">Mozambican</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="namibian">Namibian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="nauruan">Nauruan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="nepalese">Nepalese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="new zealander">New Zealander</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ni-vanuatu">Ni-Vanuatu</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="nicaraguan">Nicaraguan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="nigerien">Nigerien</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="north korean">North Korean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="northern irish">Northern Irish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="norwegian">Norwegian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="omani">Omani</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="Palestine">Palestine</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="pakistani">Pakistani</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="palauan">Palauan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="panamanian">Panamanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="papua new guinean">Papua New Guinean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="paraguayan">Paraguayan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="peruvian">Peruvian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="polish">Polish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="portuguese">Portuguese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="qatari">Qatari</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="romanian">Romanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="russian">Russian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="rwandan">Rwandan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="saint lucian">Saint Lucian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="salvadoran">Salvadoran</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="samoan">Samoan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="san marinese">San Marinese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="sao tomean">Sao Tomean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="saudi">Saudi</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="scottish">Scottish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="senegalese">Senegalese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="serbian">Serbian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="seychellois">Seychellois</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="sierra leonean">Sierra Leonean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="singaporean">Singaporean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="slovakian">Slovakian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="slovenian">Slovenian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="solomon islander">Solomon Islander</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="somali">Somali</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="south african">South African</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="south korean">South Korean</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="spanish">Spanish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="sri lankan">Sri Lankan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="sudanese">Sudanese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="surinamer">Surinamer</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="swazi">Swazi</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="swedish">Swedish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="swiss">Swiss</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="syrian">Syrian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="taiwanese">Taiwanese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="tajik">Tajik</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="tanzanian">Tanzanian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="thai">Thai</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="togolese">Togolese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="tongan">Tongan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="tunisian">Tunisian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="turkish">Turkish</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="tuvaluan">Tuvaluan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ugandan">Ugandan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="ukrainian">Ukrainian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="uruguayan">Uruguayan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="uzbekistani">Uzbekistani</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="venezuelan">Venezuelan</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="vietnamese">Vietnamese</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="welsh">Welsh</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="yemenite">Yemenite</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="zambian">Zambian</option>
+                            <option style = {{backgroundColor : '#273c75' , color : '#273c75'}}value="zimbabwean">Zimbabwean</option>
                         </select>
                     </div>
                 </div>
