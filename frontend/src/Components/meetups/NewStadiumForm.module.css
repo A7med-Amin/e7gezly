@@ -45,3 +45,8 @@
     font-weight: bold;
   }
   
+  .actions button:hover,
+  .actions button:active {
+    background-color: #4a69bd;
+    border-color: #4a69bd;
+  }
