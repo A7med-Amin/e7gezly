@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../ui/Card'
 import classes from './MatchInfoItem.module.css';
-import Backdrop from "../../Backdrop";
+import Backdrop from "./Backdrop";
 import EditMatch from './EditMatch';
 
 function MatchInfoItem(props) {
