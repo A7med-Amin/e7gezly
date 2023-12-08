@@ -123,47 +123,51 @@ function EditUser(props) {
             <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes.control}>
                     <label htmlFor='username'><span className={classes.vip}>User</span>Name</label>
-                    <input type='text' placeholder='username' required id='username' ref={usernameRef} disabled value={loadedMeetups.username} />
+                    <input style = {{padding:'15px'}} type='text' placeholder='username' required id='username' ref={usernameRef} disabled value={loadedMeetups.username} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='opass'><span className={classes.vip}>Old</span> Password</label>
-                    <input type='password' placeholder='password' required={Passo === "true" ? true : false} id='opass' ref={oldpasswordRef} />
+                    <input style = {{padding:'15px'}} type='password' placeholder='password' required={Passo === "true" ? true : false} id='opass' ref={oldpasswordRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='pass'><span className={classes.vip}>Pass</span>word</label>
-                    <input type='password' placeholder='password' required={Passo === "true" ? true : false} id='pass' ref={passwordRef} />
+                    <input style = {{padding:'15px'}} type='password' placeholder='password' required={Passo === "true" ? true : false} id='pass' ref={passwordRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='cpass'><span className={classes.vip}>Confirm</span> Password</label>
-                    <input type='password' placeholder='password' required={Passo === "true" ? true : false} id='cpass' ref={ConpasswordRef} />
+                    <input style = {{padding:'15px'}} type='password' placeholder='password' required={Passo === "true" ? true : false} id='cpass' ref={ConpasswordRef} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='first_name'><span className={classes.vip}>First</span> Name</label>
-                    <input type='text' placeholder='First name' required id='first_name' ref={fisrtNameRef} defaultValue={loadedMeetups.first_name} />
+                    <input style = {{padding:'15px'}} type='text' placeholder='First name' required id='first_name' ref={fisrtNameRef} defaultValue={loadedMeetups.first_name} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='last_name'><span className={classes.vip}>Last</span> Name</label>
-                    <input type='text' placeholder='Second name' required id='last_name' ref={lastNameRef} defaultValue={loadedMeetups.last_name} />
+                    <input style = {{padding:'15px'}} type='text' placeholder='Second name' required id='last_name' ref={lastNameRef} defaultValue={loadedMeetups.last_name} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='email'>Email</label>
-                    <input type='email' placeholder='Email' required id='email' ref={emailRef} disabled value={loadedMeetups.email} />
+                    <input style = {{padding : '15px'}} type='email' placeholder='Email' required id='email' ref={emailRef} disabled value={loadedMeetups.email} />
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='birth'><span className={classes.vip}>Birth</span>date</label>
-                    <input type='date' required id='birth' ref={birthRef} defaultValue={loadedMeetups.birthdate} />
+                    <input style = {{padding : '15px'}} type='date' required id='birth' ref={birthRef} defaultValue={loadedMeetups.birthdate} />
                 </div>
 
                 <div className="options_type">
-                    <div className="type">
-                        <input type="radio" required id="gender" value="F" name="gender" ref={FgenderRef} checked={MaleFemale === "F" ? true : false} onClick={() => setMaleFemale('F')} />
-                        <label htmlFor="female" style={{ color: "#9c1458", marginRight: "20px" }}>Female</label>
-                        <input type="radio" required id="gender" value="M" name="gender" ref={MgenderRef} checked={MaleFemale === "M" ? true : false} onClick={() => setMaleFemale('M')} />
-                        <label htmlFor="male" style={{ color: "#9c1458" }}>Male</label>
+                    <div className="type" style = {{display : 'flex'}}>
+                        <div style = {{display : 'flex' , alignItems: 'center'}}>
+                            <input type="radio" required id="gender" value="F" name="gender" ref={FgenderRef} checked={MaleFemale === "F" ? true : false} onClick={() => setMaleFemale('F')} style = {{marginRight:'5px'}} />
+                            <label htmlFor="female" style={{ color: "#273c75", fontWeight: 'bold', marginRight: "20px" }}>Female</label>
+                        </div>
+                        <div style = {{display: 'flex', alignItems : 'center'}}>
+                            <input type="radio" required id="gender" value="M" name="gender" ref={MgenderRef} checked={MaleFemale === "M" ? true : false} onClick={() => setMaleFemale('M')} style = {{marginRight : '5px'}} />
+                            <label htmlFor="male" style={{ color: "#273c75" , fontWeight : 'bold' }}>Male</label>
+                        </div>
                     </div>
                     <div className="options">
-                        <label htmlFor="nationality">Nationality</label>
-                        <select name="nationality" id="nationality" ref={NationRef} style={{ backgroundColor: "#9c1458", color: 'whitesmoke' }}>
+                        <label style = {{fontWeight : 'bold'}} htmlFor="nationality">Nationality</label>
+                        <select name="nationality" id="nationality" ref={NationRef} style={{ backgroundColor: "#273c75", color: 'whitesmoke' , padding : '10px' , borderRadius : '10px' , fontWeight : 'bold' , appearance : 'none' }}>
                             <option value={loadedMeetups.nationality} selected disabled hidden>{loadedMeetups.nationality}</option>
                             <option value="afghan">Afghan</option>
                             <option value="albanian">Albanian</option>
@@ -361,9 +365,9 @@ function EditUser(props) {
                     </div>
                 </div>
                 <div className="options_type" style={{ marginTop: '-40px' }}>
-                    <div className="type">
-                        <label htmlFor="">Role</label>
-                        <select name="role" id="role" ref={roleRef} style={{ backgroundColor: "#9c1458" }} disabled>
+                    <div className="type" style = {{display : 'flex' , alignItems : 'center'}}>
+                        <label style = {{fontWeight : 'bold' , color : '#273c75'}} htmlFor="">Role</label>
+                        <select name="role" id="role" ref={roleRef} style={{ display: 'flex' , alignItems : 'center' , justifyContent : 'center', backgroundColor: "#273c75" , borderRadius : '10px' , minWidth: '60px' , marginLeft : '10px' , minHeight : '30px' }} disabled>
                             {/* role from local storage */}
                             <option value={loadedMeetups.role}>{theRole}</option>
                         </select>
