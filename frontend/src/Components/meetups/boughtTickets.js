@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { useContext } from 'react';
 import Card from '../ui/Card'
 import classes from './MatchInfoItem.module.css';
-import TicketsContext from '../../pages/store/UserTickets_Context';
-
-import Modal from "../../Modal";
-import Backdrop from "../../Backdrop";
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
 
 function BouhgtTickets(props) {
 

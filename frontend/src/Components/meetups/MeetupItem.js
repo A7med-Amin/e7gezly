@@ -3,7 +3,7 @@ import Card from '../ui/Card'
 import classes from './MeetupItem.module.css';
 
 import ShowMore from './ShowMore';
-import Backdrop from '../../Backdrop'
+import Backdrop from './Backdrop'
 
 function MeetupItem(props) {
 
