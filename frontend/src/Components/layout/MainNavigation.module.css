@@ -16,6 +16,8 @@
   
   .logo {
     font-size: 2rem;
+    @import url(https://fonts.googleapis.com/earlyaccess/thabit.css);
+    font-family: 'Thabit', sans-serif !important;
     color: white;
     font-weight: bold;
   }
