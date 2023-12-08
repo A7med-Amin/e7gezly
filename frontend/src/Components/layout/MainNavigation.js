@@ -1,9 +1,5 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import TicketsContext from '../../pages/store/UserTickets_Context';
-
 import classes from './MainNavigation.module.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function MainNavigation(props) {
 

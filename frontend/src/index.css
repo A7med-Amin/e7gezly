@@ -1,43 +1,36 @@
-/*
-*Confirmation message css
-*/
+:root {
+  --main-color: #273c75;
+  --secondary-color: #192a56;
+  --hover-color: #4a69bd;
+}
+
 * {
   box-sizing: border-box;
 }
-
-/* body {
-  font-family: sans-serif;
-  margin: 3rem;
-  background-color: #dfdfdf;
-} */
-
-/* h1, h2 {
-  color: #333333;
-} */
 
 .btn {
   font: inherit;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   border-radius: 4px;
-  background-color: #800040;
+  background-color: var(--main-color);
   color: white;
-  border: 1px solid #800040;
+  border: 1px solid var(--main-color);
   margin: 0 1rem;
 }
 
 .btn:hover {
-  background-color: #9c1458;
-  border-color: #9c1458;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .btn--alt {
   background-color: transparent;
-  color: #800040;
+  color: var(--main-color);
 }
 
 .btn--alt:hover {
-  background-color: #f8dae9;
+  background-color: var(--hover-color);
 }
 
 .card {
@@ -106,7 +99,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  background-color: #fcf3f6;
+  background-color: var(--hover-color);
 }
 
 h1 {
