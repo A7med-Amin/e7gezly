@@ -1,19 +1,17 @@
-import './App.css';
-import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
-import AllMeetupsPage from "../pages/AllMeetups";
-import NewStaium from "../pages/NewStadium";
-import Login from "../pages/Login";
-import MatchesPage from "../pages/Matches"
-import Profile from "../pages/Profile"
-import NewMatch from "../pages/NewMatch"
-import YourTickets from "../pages/YourTickets"
-import Adminstrator from '../pages/AdminPage';
-import Seats from '../pages/Seats';
-import Creditcard from '../Components/meetups/Creditcard';
-
+import AllMeetupsPage from "./pages/AllMeetups";
+import NewStaium from "./pages/NewStadium";
+import Login from "./pages/Login";
+import MatchesPage from "./pages/Matches"
+import Profile from "./pages/Profile"
+import NewMatch from "./pages/NewMatch"
+import YourTickets from "./pages/YourTickets"
+import Adminstrator from './pages/AdminPage';
+import Seats from './pages/Seats';
+import Creditcard from './Components/meetups/Creditcard';
 
 function App() {
+  /*Routing Code */
   return (
       <Routes>
         <Route path='/' element={<Login />} />

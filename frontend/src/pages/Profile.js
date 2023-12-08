@@ -13,7 +13,7 @@ function Profile() {
     function editUser(meetupData) {
       fetch(
         /*Get user name from local storage */
-        `http://localhost:8000/api/updateuser/${LoggedIn[0]["username"]}/`,
+        `${process.env.REACT_APP_API_URL}api/updateuser/${LoggedIn[0]["username"]}/`,
         {
           method: 'POST',
           body: JSON.stringify(meetupData),

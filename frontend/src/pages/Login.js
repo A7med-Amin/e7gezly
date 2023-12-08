@@ -41,7 +41,7 @@ function Login() {
 
     const postMechanic = (meetupData) =>
         axios
-            .post("http://localhost:8000/api/login/", meetupData)
+            .post(`${process.env.REACT_APP_API_URL}api/login/`, meetupData)
             .then((response) => {
                 return response;
             }).catch((err) => {
@@ -74,7 +74,7 @@ function Login() {
 
     function addUserHandler(meetupData) {
         fetch(
-            'http://localhost:8000/api/adduser/',
+            `${process.env.REACT_APP_API_URL}api/adduser/`,
             {
                 method: 'POST',
                 body: JSON.stringify(meetupData),

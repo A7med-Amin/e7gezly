@@ -1,20 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "./Header.css"
-const Header = () => {
-  // let LoggedIn = localStorage.getItem("LoggedIn");
-  let LoggedIn = "mk"
-  // LoggedIn = JSON.parse(LoggedIn);
-  const Logout = () => {
-    // localStorage.removeItem("LoggedIn");
-  };
-    if (true) {
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import TicketsContext from '../../pages/store/UserTickets_Context';
 
-      if (true) {
+import classes from './MainNavigation.module.css';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+function MainNavigation(props) {
+
+  function LoggingOut() {
+    localStorage.removeItem('LoggedIn');
+  }
+
+  function WhatUser() {
+    var LoggedIn = localStorage.getItem('LoggedIn');
+    LoggedIn = JSON.parse(LoggedIn);
+
+    if (LoggedIn) {
+
+      if (LoggedIn[0]["role"] === 'M') {
         return (
-          <header className= "header">
-            kkk
-            <div className = "logo">Marhaba</div>
+          <header className={classes.header}>
+            <div className={classes.logo}>Marhaba</div>
             <nav>
               <ul>
                 <li>
@@ -34,7 +40,7 @@ const Header = () => {
                 </li>
 
                 <li>
-                  <Link to='/' onClick={Logout}>Logout</Link>
+                  <Link to='/' onClick={LoggingOut}>Logout</Link>
                 </li>
               </ul>
             </nav>
@@ -43,10 +49,10 @@ const Header = () => {
 
       }
 
-      else if (false) {
+      else if (LoggedIn[0]["role"] === 'F') {
         return (
-          <header className = "header">
-            <div className = "logo">Marhaba</div>
+          <header className={classes.header}>
+            <div className={classes.logo}>Marhaba</div>
             <nav>
               <ul>
                 <li>
@@ -63,12 +69,12 @@ const Header = () => {
 
                 <li>
                   <Link to='/YourTickets'>Your Tickets
-                    <span className="badge"></span>
+                    <span className={classes.badge}>{props.Ticketsnum}</span>
                   </Link>
                 </li>
 
                 <li>
-                  <Link to='/' onClick={Logout}>Logout</Link>
+                  <Link to='/' onClick={LoggingOut}>Logout</Link>
                 </li>
               </ul>
             </nav>
@@ -79,8 +85,8 @@ const Header = () => {
     }
     else {
       return (
-        <header className = "header">
-          <div className = "logo">Marhaba</div>
+        <header className={classes.header}>
+          <div className={classes.logo}>Marhaba</div>
           <nav>
             <ul>
               <li>
@@ -99,5 +105,11 @@ const Header = () => {
         </header>
       );
     }
+  }
+
+  return (
+    <WhatUser />
+  );
 }
-export default Header
+
+export default MainNavigation;

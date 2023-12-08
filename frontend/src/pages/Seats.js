@@ -29,7 +29,7 @@ function Seats() {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `http://localhost:8000/api/seats/${matchID}`
+      `${process.env.REACT_APP_API_URL}api/seats/${matchID}`
     )
       .then((response) => {
         if(response.status === 405)

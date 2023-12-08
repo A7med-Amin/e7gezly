@@ -10,7 +10,7 @@ function MatchesPage() {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      'http://localhost:8000/api/matches'
+      `${process.env.REACT_APP_API_URL}api/matches`
     )
       .then((response) => {
         return response.json();

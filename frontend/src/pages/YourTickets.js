@@ -17,7 +17,7 @@ function YourTickets() {
     setIsLoading(true);
     fetch(
       /*Get user name from local storage */
-      `http://localhost:8000/api/tickets/${LoggedIn[0]["username"]}`
+      `${process.env.REACT_APP_API_URL}api/tickets/${LoggedIn[0]["username"]}`
     )
       .then((response) => {
         return response.json();

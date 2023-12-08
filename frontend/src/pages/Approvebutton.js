@@ -6,7 +6,7 @@ function Approve(props) {
 
     function clickhandler() {
         // fetch data put true approved  
-        fetch(`http://localhost:8000/api/approve/${props.username}`, {
+        fetch(`${process.env.REACT_APP_API_URL}api/approve/${props.username}`, {
             method: "GET"
         }).then((res) => {
             if (res.status !== 200) {
