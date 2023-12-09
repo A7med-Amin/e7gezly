@@ -62,7 +62,6 @@ function MatchInfoItem(props) {
         }
     }
 
-
     return (
         <li className={classes.item}>
             <Card>
@@ -78,26 +77,26 @@ function MatchInfoItem(props) {
                 </div>
 
                 <div className={`${classes.content} ${classes.divaya}`}>
-                    <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 className={classes.stad} style={{ color: '#143c82' }}>Stadium</h5>
-                        <h4 style={{marginTop:'2%'}}>{props.Stadium.name}</h4>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info} >Stadium</h5>
+                        <address className={classes.Time}>{props.Stadium.name}</address>
                     </div>
 
-                    <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 style={{ color: '#143c82' }}>Date</h5>
-                        <address>{props.date}</address>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info} >Date</h5>
+                        <address className={classes.Time}>{props.date}</address>
                     </div>
 
-                    <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 style={{ color: '#143c82' }}>Time</h5>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info}>Time</h5>
                         <address className={classes.Time}>{props.time}</address>
                     </div>
 
-                    <h5 style={{ color: '#143c82' }}>Referees</h5>
+                    <h5 className={classes.info}>Referees</h5>
                     <div className={`${classes.LinesMan} ${classes.divaya}`}>
-                        <h5>{props.refree}</h5>
-                        <h5>{props.line1}</h5>
-                        <h5>{props.line2}</h5>
+                        <address className={classes.Time}>{props.refree}</address>
+                        <address className={classes.Time}>{props.line1}</address>
+                        <address className={classes.Time}>{props.line2}</address>
                     </div>
                 </div>
 
