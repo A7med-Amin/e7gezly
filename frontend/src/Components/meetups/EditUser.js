@@ -153,7 +153,7 @@ function EditUser(props) {
                     <input style = {{padding : '15px'}} type='date' required id='birth' ref={birthRef} defaultValue={loadedMeetups.birthdate} />
                 </div>
 
-                <div className="options_type">
+                <div style = {{display : 'flex' , justifyContent : 'space-between'}}>
                     <div className="type" style = {{display : 'flex'}}>
                         <div style = {{display : 'flex' , alignItems: 'center'}}>
                             <input type="radio" required id="gender" value="F" name="gender" ref={FgenderRef} checked={MaleFemale === "F" ? true : false} onClick={() => setMaleFemale('F')} style = {{marginRight:'5px'}} />
@@ -164,7 +164,7 @@ function EditUser(props) {
                             <label htmlFor="male" style={{ color: "#273c75" , fontWeight : 'bold' }}>Male</label>
                         </div>
                     </div>
-                    <div className="options">
+                    <div style = {{display : 'flex' , flexDirection : 'column'}}>
                         <label style = {{fontWeight : 'bold'}} htmlFor="nationality">Nationality</label>
                         <select name="nationality" id="nationality" ref={NationRef} style={{ backgroundColor: "#273c75", color: 'whitesmoke' , padding : '10px' , borderRadius : '10px' , fontWeight : 'bold' , appearance : 'none' }}>
                             <option style = {{backgroundColor : '#273c75' , color : "white"}} value={loadedMeetups.nationality} selected disabled hidden>{loadedMeetups.nationality}</option>
@@ -363,12 +363,12 @@ function EditUser(props) {
                         </select>
                     </div>
                 </div>
-                <div className="options_type" style={{ marginTop: '-40px' }}>
+                <div className="options_type">
                     <div className="type" style = {{display : 'flex' , alignItems : 'center'}}>
                         <label style = {{fontWeight : 'bold' , color : '#273c75'}} htmlFor="">Role</label>
-                        <select name="role" id="role" ref={roleRef} style={{ display: 'flex' , alignItems : 'center' , justifyContent : 'center', backgroundColor: "#273c75" , borderRadius : '10px' , minWidth: '60px' , marginLeft : '10px' , minHeight : '30px' }} disabled>
+                        <select name="role" id="role" ref={roleRef} style={{fontWeight : 'bold' , textAlign : 'center' , backgroundColor: "#273c75" , borderRadius : '10px' , minWidth: '60px' , marginLeft : '10px' , minHeight : '30px' , appearance : 'none' , color:'white' }} disabled>
                             {/* role from local storage */}
-                            <option value={loadedMeetups.role}>{theRole}</option>
+                            <option style = {{color : 'white'}} value={loadedMeetups.role}>{theRole}</option>
                         </select>
                     </div>
                 </div>
