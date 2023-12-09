@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Layout from "../Components/layout/Layout";
-import EditUser from '../Components/meetups/EditUser';
-
+import UserInfo from '../Components/UserInfo/UserInfo';
 
 function Profile() {
 
@@ -38,7 +37,7 @@ function Profile() {
       <Layout>
         <section>
           <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '20px'}}>Profile</h1>
-          <EditUser onAddMeetup={editUser} />
+          <UserInfo onAddMeetup={editUser} />
         </section>
       </Layout>
     );
