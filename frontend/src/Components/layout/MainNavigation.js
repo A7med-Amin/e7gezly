@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './MainNavigation.module.css';
-
+import logo from './Icon.png';
 function MainNavigation(props) {
 
   function LoggingOut() {
@@ -16,7 +16,7 @@ function MainNavigation(props) {
       if (LoggedIn[0]["role"] === 'M') {
         return (
           <header className={classes.header}>
-            <div className={classes.logo}>Marhaba</div>
+            <img src={logo} alt="Marhaba" height={70} width={100} />
             <nav>
               <ul>
                 <li>
@@ -48,7 +48,7 @@ function MainNavigation(props) {
       else if (LoggedIn[0]["role"] === 'F') {
         return (
           <header className={classes.header}>
-            <div className={classes.logo}>Marhaba</div>
+            <img src={logo} alt="Marhaba" height={70} width={100} />
             <nav>
               <ul>
                 <li>
@@ -82,7 +82,7 @@ function MainNavigation(props) {
     else {
       return (
         <header className={classes.header}>
-          <div className={classes.logo}>Marhaba</div>
+          <img src={logo} alt="Marhaba" height={70} width={100} />
           <nav>
             <ul>
               <li>

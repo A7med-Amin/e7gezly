@@ -25,12 +25,12 @@ function MeetupItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
+          <h3 style = {{fontWeight : 'bold'}}>{props.title}</h3>
           <address>{props.address}</address>
-          <p>{props.description}</p>
+          <p style = {{fontSize : '15px' , fontWeight : '550'}}>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          <button onClick={ShowingMore}>Show More</button>
+          <button className= {classes.btnAction} onClick={ShowingMore}>Show More</button>
           {ShowmoreIsopen && <ShowMore text= {props.des} onCancel={closeModalHandler} />}
           {ShowmoreIsopen && <Backdrop oncCancel={closeModalHandler} />}
         </div>
