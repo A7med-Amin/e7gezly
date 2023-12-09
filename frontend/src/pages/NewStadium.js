@@ -33,7 +33,7 @@ function NewStaium() {
   return (
     <Layout>
       <section>
-        <h1>Add Stadium</h1>
+        <h1 style = {{fontWeight : 'bold' , textAlign : 'center' , marginBottom : '15px'}}>Add Stadium</h1>
         <NewStadiumForm onAddMeetup={addStadupHandler} />
       </section>
     </Layout>

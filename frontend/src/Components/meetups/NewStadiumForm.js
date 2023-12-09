@@ -46,19 +46,19 @@ function NewStadiumForm(props) {
       <form className={classes.form} onSubmit={ValidateSeats}>
       <div className={classes.control}>
           <label htmlFor='name'><span className={classes.vip}>Stadium</span> Name</label>
-          <input type='text' required id='name' ref={nameInputRef} />
+          <input style = {{padding : '15px'}} type='text' required id='name' ref={nameInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='rows'><span className={classes.vip}>VIP</span> Lounge Rows</label>
-          <input type='text' required id='rows' ref={rowInputRef} />
+          <input style = {{padding : '15px'}} type='text' required id='rows' ref={rowInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='seats_per_row'>Row Number Of Seats</label>
-          <input type='text' required id='seats_per_row' ref={colInputRef} />
+          <input style = {{padding : '15px'}} type='text' required id='seats_per_row' ref={colInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='link'>Stadium Image</label>
-          <input type='url'  id='link' ref={imgInputRef} />
+          <input style = {{padding : '15px'}} type='url'  id='link' ref={imgInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Description</label>
@@ -67,6 +67,7 @@ function NewStadiumForm(props) {
             required
             rows='4'
             ref={descriptionInputRef}
+            style = {{padding : '15px'}}
           ></textarea>
         </div>
         <div className={classes.actions}>

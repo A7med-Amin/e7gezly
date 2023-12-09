@@ -36,8 +36,9 @@
   
   .header a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
+    font-weight: 700;
   }
   
   .header a:hover,
