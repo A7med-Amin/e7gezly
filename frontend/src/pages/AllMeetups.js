@@ -44,7 +44,7 @@ function AllMeetupsPage() {
   return (
     <Layout>
       <section>
-        <h1>About EPL</h1>
+        <h1 style = {{fontWeight : 'bold' , textAlign : 'center' , marginBottom : '15px'}}>About EPL</h1>
         <MeetupList meetups={ABOUT_DATA} />
       </section>
     </Layout>
