@@ -6,6 +6,16 @@
   align-items: center;
   gap: 24px;
 }
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: linear-gradient(#243b55, #141e30);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
 
 .radio-button {
   display: inline-block;

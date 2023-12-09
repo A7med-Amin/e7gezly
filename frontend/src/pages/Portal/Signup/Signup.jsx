@@ -88,7 +88,7 @@ export const Signup = () => {
 
   return (
     <div className="login-page">
-      <img src={logo} width={250} height={250} alt="logo" />
+      <img className = "logo" src={logo} width={250} height={250} alt="logo" />
       <div className="login-box">
         <h2>Sign up</h2>
         <form onSubmit={validateSignUp}>
