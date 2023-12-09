@@ -1,5 +1,4 @@
 import React from "react";
-import "../Portal.css";
 import { useRef, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

@@ -196,6 +196,6 @@ input[type="checkbox"] {
   }
 }
 
-img {
+.logo {
   filter: drop-shadow(0 00px 10px var(--accent-color));
 }

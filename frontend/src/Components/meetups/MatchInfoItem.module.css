@@ -29,7 +29,7 @@
 
   .image img{
     width: 50%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .Teams h2{
