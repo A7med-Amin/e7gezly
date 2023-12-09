@@ -11,7 +11,7 @@
 a {
   text-decoration: none;
   color: white;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 a:hover {

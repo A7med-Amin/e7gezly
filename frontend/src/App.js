@@ -10,7 +10,7 @@ import YourTickets from "./pages/YourTickets";
 import Adminstrator from "./pages/AdminPage";
 import Seats from "./pages/Seats";
 import Creditcard from "./Components/meetups/Creditcard";
-
+import ErrorPage from "./pages/ErrorPage";
 function App() {
   /*Routing Code */
   return (
@@ -27,6 +27,7 @@ function App() {
       <Route path="/YourTickets" element={<YourTickets />} />
       <Route path="/Seats" element={<Seats />} />
       <Route path="/creditCard" element={<Creditcard />} />
+      <Route path="*" element={ErrorPage} />
     </Routes>
   );
 }

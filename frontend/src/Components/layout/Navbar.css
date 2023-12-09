@@ -1,0 +1,65 @@
+:root {
+  --main-color: #273c75;
+  --secondary-color: #192a56;
+  --hover-color: #4a69bd;
+}
+
+nav {
+  position: relative;
+  white-space: nowrap;
+  color: white;
+  background: var(--main-color);
+  padding: var(--underline-height) 0;
+  margin: 0.5rem 0 0 0;
+  box-shadow: 0 1em 2em rgba(black, 0.05);
+  width: 100%;
+}
+.navbar-element:hover {
+  text-decoration: none;
+}
+.navbar-element {
+  text-decoration: none;
+  font-size: large;
+  color: white;
+  display: inline-block;
+  z-index: 10;
+  width: 20%;
+  padding: 1em 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.underline {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--underline-height);
+  width: 20%;
+  background: var(--secondary-color);
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  transition: transform var(--transition-duration) ease-in-out;
+
+  &:nth-child(1) {
+    background: white;
+    transition: calc(var(--transition-duration) * 0.8);
+  }
+  &:nth-child(2) {
+    background: white;
+    transition: calc(var(--transition-duration) * 1.2);
+  }
+  &:nth-child(3) {
+    background: white;
+  }
+}
+
+nav.black {
+  .underline {
+    background: white;
+    border-radius: 0.25em;
+    height: calc(var(--underline-height) / 2);
+    mix-blend-mode: initial;
+  }
+}
