@@ -84,8 +84,6 @@ function BouhgtTickets(props) {
                 </div>
 
                 <div className={`${classes.content} ${classes.divaya}`}>
-                    {/* <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                    </div> */}
                     <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
                         <h4 style={{ margin: 'auto',color:'#192a56' }}>Time</h4>
                         <h5 style={{ width: '100%', margin: 'auto' }}>{props.match.time}</h5>

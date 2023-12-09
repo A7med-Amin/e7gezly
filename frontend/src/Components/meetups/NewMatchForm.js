@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from 'react';
 import Card from "../ui/Card";
 import classes from './NewStadiumForm.module.css';
 
+
 function NewMatchForm(props) {
     const [empdata, empdatachange] = useState(null);
     const [teams, setTeams] = useState([]);
@@ -16,6 +17,13 @@ function NewMatchForm(props) {
     const mainRefreeRef = useRef();
     const lineManOneRef = useRef();
     const lineManTwoRef = useRef();
+
+    // Referees
+    const referees = ["Ibrahim Nour Eldin", "Abdelaziz Elsayed", "Tarek Magdy", "Mohamed Adel", 
+    "Mohamed Maarouf", "Mohamed Salama", "Mohamed Youssef", "Walid Abdelrazak", 
+    "Mohamed Bassiouni", "Mahmoud Elbanna", "Amin Omar", "Ahmed Elghandour", "Mahmoud Nagy", "Wael Farhan", 
+    "Mahmoud Wafa", "Ahmed Gamal", "Mahmoud Nassef", "Hesham Elkadi", "Nader Kamar", "Ahmed Hamdi"];
+
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}api/stadiums/`).then((res) => {
@@ -86,9 +94,9 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Hteam'><span className={classes.vip}>Home</span> Team</label>
                     <select name="teams" ref={homeTeamRef} style={{ padding : '10px' }}>
-                        <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} value="" selected disabled hidden>Select Home Team</option>
+                        <option className={classes.optionstyle} value="" selected disabled hidden>Select Home Team</option>
                         {teams.map((team, index) => (
-                            <option style = {{backgroundColor : '#273c75' , fontWeight :'600'}} key={index} value={team.name}>{team.name}</option>
+                            <option className={classes.optionstyle} key={index} value={team.name}>{team.name}</option>
                         ))}
                     </select>
                 </div>
@@ -97,18 +105,18 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Ateam'><span className={classes.vip}>Away</span> Team</label>
                     <select name="teams" ref={awayTeamRef} style={{ padding : '10px' }}>
-                        <option style = {{backgroundColor : '#273c75'}} value="" selected disabled hidden>Select Away Team</option>
+                        <option className={classes.optionstyle} value="" selected disabled hidden>Select Away Team</option>
                         {teams.map((team, index) => (
-                            <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} key={index} value={team.name}>{team.name}</option>
+                            <option className={classes.optionstyle} key={index} value={team.name}>{team.name}</option>
                         ))}
                     </select>
                 </div>
                 <div className={classes.control}>
                 <label htmlFor='Stad'><span className={classes.vip}>Stadium</span> Name</label>
                 <select name="teams" ref={stadiumRef} style={{ padding : '10px' }} >
-                    <option style = {{backgroundColor : '#273c75'}} value={props.Stadium} selected disabled hidden>{props.Stadium}</option>
+                    <option className={classes.optionstyle} selected disabled hidden>{props.Stadium}</option>
                     {empdata && empdata.map((item, key) => (
-                        <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} value={item.name} key={key}>
+                        <option className={classes.optionstyle} value={item.name} key={key}>
                             {item.name}
                         </option>
                     ))}
@@ -123,89 +131,38 @@ function NewMatchForm(props) {
                 <input type='time' required id='Mtime' ref={timeRef} defaultValue={props.time} style={{ padding : '10px' }} />
             </div>
             <div className={classes.control}>
-                    <label htmlFor='MainRef'><span className={classes.vip}>Main</span> Refree</label>
-                    <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value={props.refree} selected disabled hidden>{props.refree}</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ibrahim Nour Eldin">Ibrahim Nour Eldin</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Abdelaziz Elsayed">Abdelaziz Elsayed</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Tarek Magdy">Tarek Magdy</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Adel">Mohamed Adel</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Maarouf">Mohamed Maarouf</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Salama">Mohamed Salama</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Youssef">Mohamed Youssef</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Walid Abdelrazak">Walid Abdelrazak</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Bassiouni">Mohamed Bassiouni</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Elbanna">Mahmoud Elbanna</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Amin Omar">Amin Omar</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Elghandour">Ahmed Elghandour</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Nagy">Mahmoud Nagy</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Wael Farhan">Wael Farhan</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Wafa">Mahmoud Wafa</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Gamal">Ahmed Gamal</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Nassef">Mahmoud Nassef</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Hesham Elkadi">Hesham Elkadi</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Nader Kamar">Nader Kamar</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Hamdi">Ahmed Hamdi</option>
-                    </select>
+                <label htmlFor='MainRef'><span className={classes.vip}>Main</span> Refree</label>
+                <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
+                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
+                    {referees.map((referee) => 
+                        <option className={classes.optionstyle} value={referee}>{referee}</option>
+                    )}
+                </select>
 
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='LineManOne'>Lineman<span className={classes.vip}> 1</span></label>
-                    <select name="teams" ref={lineManOneRef} style={{ padding : '10px' }} >
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value={props.refree} selected disabled hidden>{props.refree}</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ibrahim Nour Eldin">Ibrahim Nour Eldin</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Abdelaziz Elsayed">Abdelaziz Elsayed</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Tarek Magdy">Tarek Magdy</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Adel">Mohamed Adel</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Maarouf">Mohamed Maarouf</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Salama">Mohamed Salama</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Youssef">Mohamed Youssef</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Walid Abdelrazak">Walid Abdelrazak</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Bassiouni">Mohamed Bassiouni</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Elbanna">Mahmoud Elbanna</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Amin Omar">Amin Omar</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Elghandour">Ahmed Elghandour</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Nagy">Mahmoud Nagy</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Wael Farhan">Wael Farhan</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Wafa">Mahmoud Wafa</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Gamal">Ahmed Gamal</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Nassef">Mahmoud Nassef</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Hesham Elkadi">Hesham Elkadi</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Nader Kamar">Nader Kamar</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Hamdi">Ahmed Hamdi</option>
+                    <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
+                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
+                    {referees.map((referee) => 
+                        <option className={classes.optionstyle} value={referee}>{referee}</option>
+                    )}
                     </select>
 
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='LineManTwo'>Lineman<span className={classes.vip}> 2</span></label>
-                    <select name="teams" ref={lineManTwoRef} style={{ padding : '10px' }} >
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value={props.refree} selected disabled hidden>{props.refree}</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ibrahim Nour Eldin">Ibrahim Nour Eldin</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Abdelaziz Elsayed">Abdelaziz Elsayed</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Tarek Magdy">Tarek Magdy</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Adel">Mohamed Adel</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Maarouf">Mohamed Maarouf</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Salama">Mohamed Salama</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Youssef">Mohamed Youssef</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Walid Abdelrazak">Walid Abdelrazak</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mohamed Bassiouni">Mohamed Bassiouni</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Elbanna">Mahmoud Elbanna</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Amin Omar">Amin Omar</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Elghandour">Ahmed Elghandour</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Nagy">Mahmoud Nagy</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Wael Farhan">Wael Farhan</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Wafa">Mahmoud Wafa</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Gamal">Ahmed Gamal</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Mahmoud Nassef">Mahmoud Nassef</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Hesham Elkadi">Hesham Elkadi</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Nader Kamar">Nader Kamar</option>
-                        <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ahmed Hamdi">Ahmed Hamdi</option>
+                    <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
+                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
+                    {referees.map((referee) => 
+                        <option className={classes.optionstyle} value={referee}>{referee}</option>
+                    )}
                     </select>
                 </div>
             <div className={classes.actions}>
                 <button>{props.text}</button>
             </div>
-               
+
             </form>
         </Card>
     );
