@@ -2,7 +2,6 @@ import "./container.css"
 import Seat from "./Seat";
 import "../../pages/Globalvariable"
 import "../../pages/Globalvariable2"
-import Test from "./Test";
 function Container(propes)
 {
   

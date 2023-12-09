@@ -61,6 +61,45 @@
   overflow: auto;
 }
 
+.showeditmatchmodal {
+  height: 90vh;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.922);
+  /* padding: 3rem; */
+  font-size: 20px;
+  text-align: center;
+  width: 50rem;
+  z-index: 10;
+  position: fixed;
+  top:5vh;
+  left: calc(50% - 23rem);
+  overflow: auto;
+}
+
+/* This will affect the scrollbar globally */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: none 0 0 5px white; 
+  border-radius: 70px;
+  color: white;
+}
+
+
 .mod {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;

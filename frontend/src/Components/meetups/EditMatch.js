@@ -38,7 +38,7 @@ function EditMatch(props) {
   }
 
   return (
-    <div className="ShowMore">
+    <div className="showeditmatchmodal">
       <NewMatchForm onAddMeetup={editMatchupHandler} text="Edit Match"
         matchID={props.matchID} H_team={props.H_team}
         A_team={props.A_team} Stadium={props.Stadium}

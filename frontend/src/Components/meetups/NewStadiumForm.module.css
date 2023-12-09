@@ -1,6 +1,7 @@
 .form {
     padding: 1rem;
     margin: auto;
+    text-align: start;
   }
   
   .control {
@@ -58,4 +59,14 @@
     color: white;
     background-color: #273c75;
     font-weight: 600;
+  }
+
+  .editmatchcard{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    margin-bottom: 30px;
+    /* width: ; */
+    margin: auto;
   }

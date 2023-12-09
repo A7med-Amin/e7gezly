@@ -41,10 +41,8 @@ function Creditcard(props) {
         Fetching(global.arrreserved[i]);
       }
     }
-    navigate('/Matches');
+    navigate('/YourTickets');
   }
-
-
 
   return (
     <div className="conte">

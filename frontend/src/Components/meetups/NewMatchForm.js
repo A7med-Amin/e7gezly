@@ -1,6 +1,5 @@
 // Import necessary modules
 import { useRef, useEffect, useState } from 'react';
-import Card from "../ui/Card";
 import classes from './NewStadiumForm.module.css';
 
 
@@ -86,15 +85,13 @@ function NewMatchForm(props) {
     }
 
     return (
-        <Card>
+        <div className= {classes.editmatchcard}>
             <form className={classes.form} onSubmit={Validate}>
-                {/* ... other code ... */}
-                
                 {/* Home Team Dropdown */}
                 <div className={classes.control}>
                     <label htmlFor='Hteam'><span className={classes.vip}>Home</span> Team</label>
                     <select name="teams" ref={homeTeamRef} style={{ padding : '10px' }}>
-                        <option className={classes.optionstyle} value="" selected disabled hidden>Select Home Team</option>
+                        <option className={classes.optionstyle} value="" selected disabled hidden>{props.H_team}</option>
                         {teams.map((team, index) => (
                             <option className={classes.optionstyle} key={index} value={team.name}>{team.name}</option>
                         ))}
@@ -105,7 +102,7 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Ateam'><span className={classes.vip}>Away</span> Team</label>
                     <select name="teams" ref={awayTeamRef} style={{ padding : '10px' }}>
-                        <option className={classes.optionstyle} value="" selected disabled hidden>Select Away Team</option>
+                        <option className={classes.optionstyle} value="" selected disabled hidden>{props.A_team}</option>
                         {teams.map((team, index) => (
                             <option className={classes.optionstyle} key={index} value={team.name}>{team.name}</option>
                         ))}
@@ -143,7 +140,7 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='LineManOne'>Lineman<span className={classes.vip}> 1</span></label>
                     <select name="teams" ref={lineManOneRef} style={{ padding:'10px' }} >
-                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
+                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.line1}</option>
                     {referees.map((referee,index) => 
                         <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
@@ -153,7 +150,7 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='LineManTwo'>Lineman<span className={classes.vip}> 2</span></label>
                     <select name="teams" ref={lineManTwoRef} style={{ padding:'10px' }} >
-                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
+                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.line2}</option>
                     {referees.map((referee,index) => 
                         <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
@@ -164,7 +161,7 @@ function NewMatchForm(props) {
             </div>
 
             </form>
-        </Card>
+        </div>
     );
 }
 
