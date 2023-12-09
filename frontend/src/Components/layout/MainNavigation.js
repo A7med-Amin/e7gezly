@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import logo from "./Icon.png";
+import "./Navbar.css";
 function MainNavigation(props) {
+  const navigate = useNavigate();
   function LoggingOut() {
     localStorage.removeItem("LoggedIn");
+    navigate("/");
   }
 
   function WhatUser() {
@@ -14,67 +17,63 @@ function MainNavigation(props) {
       if (LoggedIn[0]["role"] === "M") {
         return (
           <header className={classes.header}>
-            <img className = {classes.logoicon} src={logo} alt="Icon" height={70} width={100} />
+            <img
+              className={classes.logoicon}
+              src={logo}
+              alt="Icon"
+              height={70}
+              width={100}
+            />
             <nav>
-              <ul>
-                <li>
-                  <Link to="/Home">Home</Link>
-                </li>
+              <Link to="/home" className="navbar-element">
+                Home
+              </Link>
 
-                <li>
-                  <Link to="/Matches">Matches</Link>
-                </li>
+              <Link to="/matches" className="navbar-element">
+                Matches
+              </Link>
 
-                <li>
-                  <Link to="/NewMatch">Add Match</Link>
-                </li>
+              <Link className="navbar-element" to="/NewMatch">
+                Add Match
+              </Link>
 
-                <li>
-                  <Link to="/new-stadium">Add Stadium</Link>
-                </li>
+              <Link className="navbar-element" to="/new-stadium">
+                Add Stadium
+              </Link>
 
-                <li>
-                  <Link to="/" onClick={LoggingOut}>
-                    Logout
-                  </Link>
-                </li>
-              </ul>
+              <a className="navbar-element" onClick={() => LoggingOut()}>
+                Logout
+              </a>
             </nav>
           </header>
         );
       } else if (LoggedIn[0]["role"] === "F") {
         return (
           <header className={classes.header}>
-            <img className = {classes.logoicon} src={logo} alt="Icon" height={70} width={100} />
+            <img
+              className={classes.logoicon}
+              src={logo}
+              alt="Icon"
+              height={70}
+              width={100}
+            />
             <nav>
-              <ul>
-                <li>
-                  <Link to="/Home">Home</Link>
-                </li>
-
-                <li>
-                  <Link to="/Profile">Profile</Link>
-                </li>
-
-                <li>
-                  <Link to="/Matches">Matches</Link>
-                </li>
-
-                <li>
-                  <Link to="/YourTickets">
-                    Your Tickets
-                    <span className={classes.badge}>
-                      {props.Ticketsnum ?? 0}
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/" onClick={LoggingOut}>
-                    Logout
-                  </Link>
-                </li>
-              </ul>
+              <Link to="/home" className="navbar-element">
+                Home
+              </Link>
+              <Link to="/profile" className="navbar-element">
+                Profile
+              </Link>
+              <Link to="/yourtickets" className="navbar-element">
+                Your Tickets
+                <span className={classes.badge}>{props.Ticketsnum ?? 0}</span>
+              </Link>
+              <Link to="/matches" className="navbar-element">
+                Matches
+              </Link>
+              <a className="navbar-element" onClick={() => LoggingOut()}>
+                Logout
+              </a>
             </nav>
           </header>
         );
@@ -82,21 +81,24 @@ function MainNavigation(props) {
     } else {
       return (
         <header className={classes.header}>
-          <img className = {classes.logoicon} src={logo} alt="Icon" height={70} width={100} />
+          <img
+            className={classes.logoicon}
+            src={logo}
+            alt="Icon"
+            height={70}
+            width={100}
+          />
+
           <nav>
-            <ul>
-              <li>
-                <Link to="/Home">Home</Link>
-              </li>
-
-              <li>
-                <Link to="/Matches">Matches</Link>
-              </li>
-
-              <li>
-                <Link to="/">LogIn</Link>
-              </li>
-            </ul>
+            <Link to="/home" className="navbar-element">
+              Home
+            </Link>
+            <Link to="/matches" className="navbar-element">
+              Matches
+            </Link>
+            <Link className="navbar-element" to="/">
+              Login
+            </Link>
           </nav>
         </header>
       );
