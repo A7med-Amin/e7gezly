@@ -4,25 +4,39 @@ import MeetupList from '../Components/meetups/MeetupList'
 const ABOUT_DATA = [
   {
     id: 'm1',
-    title: 'Egyptian football federation',
+    title: 'Egyptian league history',
     image:
-      'https://images.unsplash.com/photo-1671171794557-a2444d109ab0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80',
+      'https://upload.wikimedia.org/wikipedia/commons/3/35/Al_Ahly_1948.png',
     address: '',
     description:
-      'Lusail is Qatar first sustainable city. The foundation idea was to develop the city by combining true modernity with the richness of Qatari traditions and Islamic architecture. The coastal city of Lusail is located 22km to the north of Doha, spread over an area of 38km², with a waterfront location stretching over 28km.',
+      `The Egyptian Premier League, founded in 1948, stands as one of Africa's oldest and most prestigious football competitions.
+      Throughout its rich history, the league has been a breeding ground for talent and a stage for intense rivalries.`,
     des:
-      'Lusail extends across an area of 38 square kilometers and includes four exclusive islands and 19 multi-purpose residential, mixed-use, entertainment and commercial districts. Featuring 22 hotels with international star ratings, Lusail vibrant, multicultural hodgepodge promises a boon for hospitality, tourism and investments in Qatar. The city will be home to more than 200,000 residents of its scenic surroundings, 170,000 professionals in its 19 districts, and 80,000 visitors to its entertainment, recreation and retail and hospitality facilities; a population of nearly 450,000 people. Each of Lusail districts features an array of residential, commercial, hospitality, and retail destinations, integrating communal living in a self-contained model, complete with schools, mosques, medical facilities, as well as sport, entertainment and shopping centres.Lush greenery and pocket parks across Lusail neighborhoods, residential and commercial areas, as well as two major park networks, the Crescent Park and the Wadi Park, bring to life Lusail city green, sustainable living ambitions, creating ample space for walkways, sports fields and bicycle lanes, as well as open access to marina promenades and water bodies.'
+      `Clubs like Al Ahly and Zamalek have consistently dominated Egyptian football, amassing numerous titles and fostering a fierce competition known as the Cairo Derby.
+      Over the years, the league has witnessed the emergence of legendary players who have left an indelible mark on both domestic and international football. Egypt's 
+      footballing history is intertwined with the successes and challenges of its league, reflecting the passion and dedication of its players, coaches, and fans. As the league continues to evolve, 
+      it remains a vital part of the country's sporting identity and contributes significantly to the development of football in the African continent.
+      The league has undergone various format changes and expansions over the years, adapting to the evolving landscape of football. It serves as a crucial platform for nurturing young talent, and 
+      many Egyptian players who have achieved success both domestically and internationally have honed their skills in the league. Notable figures like Mohamed Salah, Ahmed Hossam "Mido," and 
+      Mohamed Aboutrika have risen to prominence through their performances in the Egyptian Premier League. The league has faced its share of challenges, including occasional disruptions 
+      due to political and social unrest. Nevertheless, it has remained resilient, contributing significantly to the development of football in Egypt and maintaining its status 
+      as one of Africa's premier domestic competitions. As the league continues to evolve, it remains a focal point of national pride and a crucial component in the growth of football across the African continent.`
   },
   {
     id: 'm2',
-    title: 'Doha Metro',
+    title: 'Post-war Period',
     image:
-      'https://essenceofqatar.com/wp-content/uploads/2020/07/4-QATAR-RAIL-4.png',
-    address: 'Comfortable Fast Transportation',
+      'https://upload.wikimedia.org/wikipedia/commons/5/53/Zamalek_football_team_in_caf_champions_league_1993.jpg',
+    address: '',
     description:
-      'The metro system has three lines (Gold, Green and Red) covering 37 stations Trains run every 3 minutes and staff are available at every station to assist you during your journey Use your Hayya Card and enjoy free travel from 10 November 2022 to 23 December 2022',
+      `The league returned to its 24-team format for the 1975-76 championship, but it quickly reverted to a format featuring between 12 and 16 teams. After the Yom Kippur War, Al Ahly won three championships straight,
+      followed by a single championship for Zamalek.`,
     des:
-      'The Ministry of Transport and Communications and Qatar Railways Company (Qatar Rail) amounted the soft opening of the Doha Metro Red Line South on 6th May 2019.The Doha Metro features 13 stations running (mostly underground) across 40km all the way from Al Qassar to Al Wakra (total travel time 30 minutes) and Hamad International Airport.The Qatar Rail network consists of the Red Line, Green Line and Gold Line with a total of 37 stations and an expected completion date in 2020.Red Line is the very first to launch on the network and covers some of Doha’s most prominent stations and heavy traffic areas like Souq Waqif, Doha Jadeeda, and Al Bidda.With 18 stations in operation, the inspiration behind the design of each station is inspired by Qatar cultural history.The Doha Metro trains are driverless.Doha Metro trains can reach 100 km / hour.Trains arrive every six minutes and the commute between stations lasts for approximately three minutes.'
+      `This pattern would continue until 1990: Al Ahly would win many championships, followed by a single win for Zamalek. This was only interrupted 
+      by Al Mokawloon winning the 1982-83 edition. This is the latest time a team has won the League for the first time. Al Ahly and Zamalek also dominated the CAF Champions League, starting with a 1982 triumph for Al Ahly. 
+      The Egyptian Priemer League became the most successful league in that tournament when Zamalek won in 1993.
+      The league was not played in 1990 because of Egypt's qualification for the 1990 World Cup. After this delay, Ismaily won the 1990-91 season, followed by Zamalek winning twice in a row, and after that Al Ahly won every 
+      season until the turn of the century. Zamalek and Ismaily briefly rose in power once again between 2000 and 2004, and Ismaily's 2001-02 win is the latest time that a team other than Zamalek and Al Ahly have won.`
   },
 ];
 
