@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../Icon.png";
 import "./Signup.css";
 import "../Portal.css";
@@ -87,7 +87,7 @@ export const Signup = () => {
 
   return (
     <div className="login-page">
-      <img className = "logo" src={logo} width={250} height={250} alt="logo" />
+      <img className="logo" src={logo} width={250} height={250} alt="logo" />
       <div className="login-box">
         <h2>Sign up</h2>
         <form onSubmit={validateSignUp}>
@@ -106,6 +106,8 @@ export const Signup = () => {
               placeholder=""
               required
               className="input-box"
+              onFocus={(e) => (e.target.type = "date")}
+              onBlur={(e) => (e.target.type = "text")}
             />
             <label>Date of birth</label>
           </div>
@@ -191,6 +193,11 @@ export const Signup = () => {
           </div>
 
           <button type="submit">Submit</button>
+          <div className="check-box">
+            <span>
+              <Link to="/login">Already have an account?</Link>
+            </span>
+          </div>
         </form>
       </div>
     </div>
