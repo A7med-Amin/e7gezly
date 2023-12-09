@@ -72,26 +72,26 @@ function MatchInfoItem(props) {
                 </div>
                 <div className={classes.Teams}>
                     <h2>{props.H_team.name}</h2>
-                    <h3 style={{ color: '#273c75' }}>VS</h3>
+                    <h3 style={{ color: '#143c82' }}>VS</h3>
                     <h2>{props.A_team.name}</h2>
                 </div>
                 <div className={`${classes.content} ${classes.divaya}`}>
                     <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 style={{ color: '#192a56' }}>Stadium</h5>
+                        <h5 style={{ color: '#143c82' }}>Stadium</h5>
                         <h4 style={{marginTop:'2%'}}>{props.Stadium.name}</h4>
                     </div>
 
                     <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 style={{ color: '#192a56' }}>Date</h5>
+                        <h5 style={{ color: '#143c82' }}>Date</h5>
                         <address>{props.date}</address>
                     </div>
 
                     <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 style={{ color: '#192a56' }}>Time</h5>
+                        <h5 style={{ color: '#143c82' }}>Time</h5>
                         <address className={classes.Time}>{props.time}</address>
                     </div>
 
-                    <h5 style={{ color: '#192a56' }}>Referees</h5>
+                    <h5 style={{ color: '#143c82' }}>Referees</h5>
                     <div className={`${classes.LinesMan} ${classes.divaya}`}>
                         <h5>{props.refree}</h5>
                         <h5>{props.line1}</h5>
