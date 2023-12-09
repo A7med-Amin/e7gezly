@@ -1,0 +1,15 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: underline;
+}
