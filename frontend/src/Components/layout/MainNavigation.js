@@ -14,7 +14,7 @@ function MainNavigation(props) {
       if (LoggedIn[0]["role"] === "M") {
         return (
           <header className={classes.header}>
-            <img src={logo} alt="Icon" height={70} width={100} />
+            <img className = {classes.logoicon} src={logo} alt="Icon" height={70} width={100} />
             <nav>
               <ul>
                 <li>
@@ -45,7 +45,7 @@ function MainNavigation(props) {
       } else if (LoggedIn[0]["role"] === "F") {
         return (
           <header className={classes.header}>
-            <img src={logo} alt="Icon" height={70} width={100} />
+            <img className = {classes.logoicon} src={logo} alt="Icon" height={70} width={100} />
             <nav>
               <ul>
                 <li>
@@ -82,7 +82,7 @@ function MainNavigation(props) {
     } else {
       return (
         <header className={classes.header}>
-          <img src={logo} alt="Icon" height={70} width={100} />
+          <img className = {classes.logoicon} src={logo} alt="Icon" height={70} width={100} />
           <nav>
             <ul>
               <li>

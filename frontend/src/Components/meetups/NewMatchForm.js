@@ -134,28 +134,28 @@ function NewMatchForm(props) {
                 <label htmlFor='MainRef'><span className={classes.vip}>Main</span> Refree</label>
                 <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
                     <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
-                    {referees.map((referee) => 
-                        <option className={classes.optionstyle} value={referee}>{referee}</option>
+                    {referees.map((referee, index) => 
+                        <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
                 </select>
 
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='LineManOne'>Lineman<span className={classes.vip}> 1</span></label>
-                    <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
+                    <select name="teams" ref={lineManOneRef} style={{ padding:'10px' }} >
                     <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
-                    {referees.map((referee) => 
-                        <option className={classes.optionstyle} value={referee}>{referee}</option>
+                    {referees.map((referee,index) => 
+                        <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
                     </select>
 
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='LineManTwo'>Lineman<span className={classes.vip}> 2</span></label>
-                    <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
+                    <select name="teams" ref={lineManTwoRef} style={{ padding:'10px' }} >
                     <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.refree}</option>
-                    {referees.map((referee) => 
-                        <option className={classes.optionstyle} value={referee}>{referee}</option>
+                    {referees.map((referee,index) => 
+                        <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
                     </select>
                 </div>
