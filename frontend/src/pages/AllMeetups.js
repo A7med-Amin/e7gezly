@@ -38,6 +38,22 @@ const ABOUT_DATA = [
       The league was not played in 1990 because of Egypt's qualification for the 1990 World Cup. After this delay, Ismaily won the 1990-91 season, followed by Zamalek winning twice in a row, and after that Al Ahly won every 
       season until the turn of the century. Zamalek and Ismaily briefly rose in power once again between 2000 and 2004, and Ismaily's 2001-02 win is the latest time that a team other than Zamalek and Al Ahly have won.`
   },
+  {
+    id: 'm3',
+    title: 'Egyptian league now',
+    image:
+      'https://alanbaa-eg.com/home/wp-content/uploads/2023/07/%D8%A5%D8%B3%D8%AA%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A-%D9%84%D8%AF%D8%B1%D8%B9-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A.jpg',
+    address: '',
+    description:
+      `The league returned to its 18-team. The Egyptian Premier League from 2002 to the present has been a dynamic and competitive football landscape, showcasing the country's rich footballing talent and passionate fanbase.`,
+    des:
+      `During this period, Al Ahly Sporting Club and Zamalek Sporting Club, the two Cairo-based giants, have consistently dominated the league, with both clubs securing numerous titles. Al Ahly, under the management of iconic
+      coach Manuel Jose and later Pitso Mosimane, has enjoyed remarkable success, clinching multiple league championships and continental honors, including several CAF Champions League triumphs. Zamalek, led by various coaches, 
+      has also been a formidable force, challenging Al Ahly for domestic supremacy. The league has witnessed intense rivalries, dramatic matches, and the emergence of talented players 
+      who have made significant contributions to both local and international football. Despite challenges such as political unrest impacting the league schedule, Egyptian football has continued to thrive, captivating fans and maintaining 
+      its status as one of Africa's most exciting and competitive football leagues. Off the pitch, the league has grappled with challenges ranging from political instability affecting match schedules to the COVID-19 pandemic disrupting 
+      the normal cadence of football. Nevertheless, the Egyptian Premier League remains a vibrant and resilient competition, captivating fans with its blend of skill, drama, and the enduring passion of its supporters`
+  },
 ];
 
 function AllMeetupsPage() {
