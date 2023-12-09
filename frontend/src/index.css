@@ -46,18 +46,19 @@
 }
 
 .ShowMore {
-  height: 100vh;
+  height: 60vh;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  background-color: white;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.922);
   padding: 1rem;
+  font-size: 20px;
   text-align: center;
-  margin-top: -70px;
-  width: 30rem;
+  width: 50rem;
   z-index: 10;
   position: fixed;
-  top: 10vh;
-  left: calc(50% - 15rem);
+  top:20vh;
+  left: calc(50% - 23rem);
+  overflow: auto;
 }
 
 .mod {
@@ -101,6 +102,8 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   background-color: var(--hover-color);
+  min-height: 100vh;
+  background-color: #dfe4ea !important;
 }
 
 h1 {
