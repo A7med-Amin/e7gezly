@@ -1,7 +1,7 @@
 function ShowMore(props) {
     return (
-        <div className="ShowMore" style={{lineHeight:'30px'}}>
-            <p>{props.text}</p>
+        <div className="ShowMore" style={{padding: '40px 50px'}}>
+            <p style = {{fontWeight : 'bold' , lineHeight: '35px'}}>{props.text}</p>
         </div>
     );
 }
