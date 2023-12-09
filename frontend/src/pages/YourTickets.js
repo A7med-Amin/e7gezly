@@ -1,7 +1,6 @@
 import Layout from "../Components/layout/Layout";
 import React from "react";
 import { useState, useEffect } from 'react';
-// import TicketsContext from '../../pages/store/UserTickets_Context';
 import TicketsList from "../Components/meetups/TicketsList";
 import Spinner from 'react-bootstrap/Spinner';
 

@@ -64,33 +64,34 @@ function BouhgtTickets(props) {
         <li className={classes.item}>
             <Card>
                 <div className={classes.Teams}>
-                    <h2>{props.match.h_team}</h2>
+                    <h4>{props.match.h_team}</h4>
                     <h3 style={{ color: '#273c75' }}>VS</h3>
-                    <h2>{props.match.a_team}</h2>
+                    <h4>{props.match.a_team}</h4>
+                    
                 </div>
                 <div className={`${classes.content} ${classes.divaya}`}>
-                    <div className={classes.content} style={{ width: '30%' }}>
-                        <h4 style={{ margin: 'auto',color:'#192a56' }}>Stadium</h4>
-                        <h3 style={{ width: '100%', paddingTop: '8px', fontWeight: 'normal', fontSize: '20px', margin: 'auto' }}>{props.match.stadium}</h3>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info}>Stadium</h5>
+                        <address className={classes.Time}>{props.match.stadium}</address>
                     </div>
-                    <div className={classes.content} style={{ width: '30%' }}>
-                        <h4 style={{ margin: 'auto',color:'#192a56' }}>Date</h4>
-                        <h3 style={{ width: '100%', paddingTop: '8px', fontWeight: 'normal', fontSize: '20px', margin: 'auto' }}>{props.match.date}</h3>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info} >Date</h5>
+                        <address className={classes.Time}>{props.match.date}</address>
                     </div>
-                    <div className={classes.content} style={{ width: '30%' }}>
-                        <h4 style={{ margin: 'auto',color:'#192a56' }}>Seat</h4>
-                        <h3 style={{ width: '100%', paddingTop: '8px', fontWeight: 'normal', fontSize: '20px', margin: 'auto' }}>{alphabet[props.row]}{props.seat}</h3>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info}>Seat</h5>
+                        <address className={classes.Time}>{alphabet[props.row]}{props.seat}</address>
                     </div>
                 </div>
 
                 <div className={`${classes.content} ${classes.divaya}`}>
-                    <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h4 style={{ margin: 'auto',color:'#192a56' }}>Time</h4>
-                        <h5 style={{ width: '100%', margin: 'auto' }}>{props.match.time}</h5>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info}>Time</h5>
+                        <address className={classes.Time}>{props.match.time}</address>
                     </div>
-                    <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h4 style={{ margin: 'auto' ,color:'#192a56'}}>Ticket ID</h4>
-                        <h5 style={{ width: '100%', margin: 'auto' }}>{props.id}</h5>
+                    <div className={`${classes.content} ${classes.subcontent}`}>
+                        <h5 className={classes.info}>Ticket ID</h5>
+                        <address className={classes.Time}>{props.id}</address>
                     </div>
                 </div>
 
