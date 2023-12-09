@@ -68,16 +68,18 @@ function MatchInfoItem(props) {
             <Card>
                 <div className={classes.image}>
                     <img src={props.H_team.link} alt={props.H_team.name} />
+                    <h3 className= {classes.vs}>VS</h3>
                     <img src={props.A_team.link} alt={props.A_team.name} />
                 </div>
+
                 <div className={classes.Teams}>
-                    <h2>{props.H_team.name}</h2>
-                    <h3 style={{ color: '#143c82' }}>VS</h3>
-                    <h2>{props.A_team.name}</h2>
+                    <h5>{props.H_team.name}</h5>
+                    <h5>{props.A_team.name}</h5>
                 </div>
+
                 <div className={`${classes.content} ${classes.divaya}`}>
                     <div className={classes.content} style={{ width: '30%', margin: 'auto', marginTop: '5px' }}>
-                        <h5 style={{ color: '#143c82' }}>Stadium</h5>
+                        <h5 className={classes.stad} style={{ color: '#143c82' }}>Stadium</h5>
                         <h4 style={{marginTop:'2%'}}>{props.Stadium.name}</h4>
                     </div>
 
