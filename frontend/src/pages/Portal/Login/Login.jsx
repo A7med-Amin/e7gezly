@@ -29,16 +29,17 @@ export const Login = () => {
           if (res.status !== 200) {
             alert(" No User With This Data ");
           } else {
+            console.log(res);
             if (res.data.role === "A") {
               navigate("/admin");
             } else {
-              var localData = [];
-              localData.push({
-                username: res.username,
-                role: res.role,
+              var LoggedIn = [];
+              LoggedIn.push({
+                username: userData.username,
+                role: res.data.role,
               });
 
-              localStorage.setItem("LoggedIn", JSON.stringify(localData));
+              localStorage.setItem("LoggedIn", JSON.stringify(LoggedIn));
               navigate("/Home");
             }
           }
@@ -55,7 +56,7 @@ export const Login = () => {
 
   return (
     <div className="login-page">
-      <img className = "logo" src={logo} width={250} height={250} alt="logo" />
+      <img className="logo" src={logo} width={250} height={250} alt="logo" />
       <div className="login-box">
         <h2>Login</h2>
         <form onSubmit={ValidateSignIn}>

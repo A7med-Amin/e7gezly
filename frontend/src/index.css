@@ -45,7 +45,6 @@
   text-align: right;
 }
 
-
 .ShowMore {
   height: 100vh;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -61,7 +60,7 @@
   left: calc(50% - 15rem);
 }
 
-.mod {  
+.mod {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   display: flex;
@@ -89,18 +88,17 @@
   left: 0;
 }
 
-
 /*
 * Routing css
 */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   background-color: var(--hover-color);
 }
