@@ -43,6 +43,7 @@
     border: 1px solid #273c75;
     border-radius: 10px;
     font-weight: bold;
+    transition: ease-in-out 0.5s;
   }
   
   .actions button:hover,

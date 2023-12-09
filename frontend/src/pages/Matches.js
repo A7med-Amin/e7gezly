@@ -44,7 +44,7 @@ function MatchesPage() {
   return (
     <Layout>
       <section>
-        <h1>Matches</h1>
+        <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '10px'}}>Matches</h1>
         <MatchInfoList meetups={loadedMeetups} />
       </section>
     </Layout>
