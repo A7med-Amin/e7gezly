@@ -43,7 +43,7 @@ function MatchesPage() {
   }
   return (
     <Layout>
-      <section>
+      <section style={{width : '100%'}}>
         <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '10px'}}>Matches</h1>
         <MatchInfoList meetups={loadedMeetups} />
       </section>

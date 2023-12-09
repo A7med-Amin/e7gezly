@@ -3,7 +3,8 @@ import Card from '../ui/Card'
 import classes from './MeetupItem.module.css';
 
 import ShowMore from './ShowMore';
-import Backdrop from './Backdrop'
+import Backdrop from './Backdrop';
+
 
 function MeetupItem(props) {
 
@@ -20,7 +21,7 @@ function MeetupItem(props) {
 
   return (
     <li className={classes.item}>
-      <Card>
+      <div className= {classes.infocard}>
         <div className={classes.image}>
           <img src={props.image} alt={props.title} />
         </div>
@@ -34,7 +35,7 @@ function MeetupItem(props) {
           {ShowmoreIsopen && <ShowMore text= {props.des} onCancel={closeModalHandler} />}
           {ShowmoreIsopen && <Backdrop oncCancel={closeModalHandler} />}
         </div>
-      </Card>
+      </div>
     </li>
   );
 }

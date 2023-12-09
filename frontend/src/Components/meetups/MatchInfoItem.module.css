@@ -28,6 +28,7 @@
     overflow: hidden;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
   }
 
   .content .Time{
@@ -90,6 +91,7 @@
   .actions {
     padding: 1rem;
     text-align: center;
+    width: 100%;
   }
   
   .actions button {

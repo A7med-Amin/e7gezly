@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Layout from "../Components/layout/Layout";
 import UserInfo from '../Components/UserInfo/UserInfo';
-
+import classes from '../Components/ui/Card.module.css';
 function Profile() {
 
     const history = useNavigate();
@@ -37,7 +37,9 @@ function Profile() {
       <Layout>
         <section>
           <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '20px'}}>Profile</h1>
+          <div className = {classes.cardoutsidelayoyt}>
           <UserInfo onAddMeetup={editUser} />
+          </div>
         </section>
       </Layout>
     );

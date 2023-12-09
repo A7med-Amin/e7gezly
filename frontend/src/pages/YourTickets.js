@@ -54,10 +54,7 @@ function YourTickets() {
   let content;
 
   if (loadedMeetups.length === 0) {
-    content = <div style={{ color: 'white', width: '40%', height: '9vh', textAlign: 'center', display: 'flex',
-    justifyContent: 'center', alignItems: 'center', 
-    margin: 'auto', fontSize: '20px', fontWeight: 'bolder', fontFamily: 'sans-serif', backgroundColor: '#273c75', 
-    marginTop: '10%', borderRadius: '10px' }}>No Tickets yet</div>
+    content = <div class = "NoTickets">No Tickets yet</div>
   }
   else {
     content = <TicketsList meetups={loadedMeetups} />
@@ -66,7 +63,7 @@ function YourTickets() {
   return (
     <Layout TicketsNum={loadedMeetups.length}>
       <section>
-        <h1 style={{ color: '#192a56', width: '50%', marginLeft: '30%' }}>Your Tickets</h1>
+        <h1 style={{ color: '#192a56', textAlign: 'center' }}>Your Tickets</h1>
         {content}
       </section>
     </Layout>

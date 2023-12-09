@@ -37,9 +37,6 @@ function EditMatch(props) {
     });
   }
 
-
-
-
   return (
     <div className="ShowMore">
       <NewMatchForm onAddMeetup={editMatchupHandler} text="Edit Match"

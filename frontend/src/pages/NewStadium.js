@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../Components/layout/Layout';
 
 import NewStadiumForm from '../Components/meetups/NewStadiumForm'
+import classes from '../Components/ui/Card.module.css';
 
 
 function NewStaium() {
@@ -34,11 +35,12 @@ function NewStaium() {
     <Layout>
       <section>
         <h1 style = {{fontWeight : 'bold' , textAlign : 'center' , marginBottom : '15px'}}>Add Stadium</h1>
-        <NewStadiumForm onAddMeetup={addStadupHandler} />
+        <div className = {classes.cardoutsidelayoyt}>
+          <NewStadiumForm onAddMeetup={addStadupHandler} />
+        </div>  
       </section>
     </Layout>
   );
-
 }
 
 export default NewStaium;

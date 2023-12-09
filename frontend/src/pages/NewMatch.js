@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import Layout from '../Components/layout/Layout';
 
 import NewMatchForm from '../Components/meetups/NewMatchForm'
-
+import classes from '../Components/ui/Card.module.css';
 
 function NewMatch() {
   const history = useNavigate();
@@ -50,7 +50,9 @@ function NewMatch() {
     <Layout>
       <section style = {{padding: '10px'}}>
         <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '15px'}}>Add Match</h1>
-        <NewMatchForm onAddMeetup={addMatchupHandler} text="Add Match" />
+        <div className = {classes.cardoutsidelayoyt}>
+          <NewMatchForm onAddMeetup={addMatchupHandler} text="Add Match" />
+        </div>
       </section>
     </Layout>
   );
