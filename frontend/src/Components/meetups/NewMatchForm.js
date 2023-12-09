@@ -86,9 +86,9 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Hteam'><span className={classes.vip}>Home</span> Team</label>
                     <select name="teams" ref={homeTeamRef} style={{ height: '35px' }}>
-                        <option value="" selected disabled hidden>Select Home Team</option>
+                        <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} value="" selected disabled hidden>Select Home Team</option>
                         {teams.map((team, index) => (
-                            <option key={index} value={team.name}>{team.name}</option>
+                            <option style = {{backgroundColor : '#273c75' , fontWeight :'600'}} key={index} value={team.name}>{team.name}</option>
                         ))}
                     </select>
                 </div>
@@ -97,18 +97,18 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Ateam'><span className={classes.vip}>Away</span> Team</label>
                     <select name="teams" ref={awayTeamRef} style={{ height: '35px' }}>
-                        <option value="" selected disabled hidden>Select Away Team</option>
+                        <option style = {{backgroundColor : '#273c75'}} value="" selected disabled hidden>Select Away Team</option>
                         {teams.map((team, index) => (
-                            <option key={index} value={team.name}>{team.name}</option>
+                            <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} key={index} value={team.name}>{team.name}</option>
                         ))}
                     </select>
                 </div>
                 <div className={classes.control}>
                 <label htmlFor='Stad'><span className={classes.vip}>Stadium</span> Name</label>
                 <select name="teams" ref={stadiumRef} style={{ height: '35px' }} >
-                    <option value={props.Stadium} selected disabled hidden>{props.Stadium}</option>
+                    <option style = {{backgroundColor : '#273c75'}} value={props.Stadium} selected disabled hidden>{props.Stadium}</option>
                     {empdata && empdata.map((item, key) => (
-                        <option value={item.name} key={key}>
+                        <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} value={item.name} key={key}>
                             {item.name}
                         </option>
                     ))}
