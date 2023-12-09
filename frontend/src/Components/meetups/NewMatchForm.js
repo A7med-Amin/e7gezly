@@ -85,7 +85,7 @@ function NewMatchForm(props) {
                 {/* Home Team Dropdown */}
                 <div className={classes.control}>
                     <label htmlFor='Hteam'><span className={classes.vip}>Home</span> Team</label>
-                    <select name="teams" ref={homeTeamRef} style={{ height: '35px' }}>
+                    <select name="teams" ref={homeTeamRef} style={{ padding : '10px' }}>
                         <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} value="" selected disabled hidden>Select Home Team</option>
                         {teams.map((team, index) => (
                             <option style = {{backgroundColor : '#273c75' , fontWeight :'600'}} key={index} value={team.name}>{team.name}</option>
@@ -96,7 +96,7 @@ function NewMatchForm(props) {
                 {/* Away Team Dropdown */}
                 <div className={classes.control}>
                     <label htmlFor='Ateam'><span className={classes.vip}>Away</span> Team</label>
-                    <select name="teams" ref={awayTeamRef} style={{ height: '35px' }}>
+                    <select name="teams" ref={awayTeamRef} style={{ padding : '10px' }}>
                         <option style = {{backgroundColor : '#273c75'}} value="" selected disabled hidden>Select Away Team</option>
                         {teams.map((team, index) => (
                             <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} key={index} value={team.name}>{team.name}</option>
@@ -105,7 +105,7 @@ function NewMatchForm(props) {
                 </div>
                 <div className={classes.control}>
                 <label htmlFor='Stad'><span className={classes.vip}>Stadium</span> Name</label>
-                <select name="teams" ref={stadiumRef} style={{ height: '35px' }} >
+                <select name="teams" ref={stadiumRef} style={{ padding : '10px' }} >
                     <option style = {{backgroundColor : '#273c75'}} value={props.Stadium} selected disabled hidden>{props.Stadium}</option>
                     {empdata && empdata.map((item, key) => (
                         <option style = {{backgroundColor : '#273c75' , fontWeight : '600'}} value={item.name} key={key}>
@@ -116,15 +116,15 @@ function NewMatchForm(props) {
             </div>
             <div className={classes.control}>
                 <label htmlFor='Mdate'><span className={classes.vip}>Match</span> Date</label>
-                <input type='date' required id='Mdate' ref={dateRef} defaultValue={props.date} style={{ height: '30px' }} />
+                <input type='date' required id='Mdate' ref={dateRef} defaultValue={props.date} style={{ padding : '10px' }} />
             </div>
             <div className={classes.control}>
                 <label htmlFor='Mtime'><span className={classes.vip}>Match</span> Time</label>
-                <input type='time' required id='Mtime' ref={timeRef} defaultValue={props.time} style={{ height: '30px' }} />
+                <input type='time' required id='Mtime' ref={timeRef} defaultValue={props.time} style={{ padding : '10px' }} />
             </div>
             <div className={classes.control}>
                     <label htmlFor='MainRef'><span className={classes.vip}>Main</span> Refree</label>
-                    <select name="teams" ref={mainRefreeRef} style={{ height: '35px' }} >
+                    <select name="teams" ref={mainRefreeRef} style={{ padding:'10px' }} >
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value={props.refree} selected disabled hidden>{props.refree}</option>
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ibrahim Nour Eldin">Ibrahim Nour Eldin</option>
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Abdelaziz Elsayed">Abdelaziz Elsayed</option>
@@ -151,7 +151,7 @@ function NewMatchForm(props) {
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='LineManOne'>Lineman<span className={classes.vip}> 1</span></label>
-                    <select name="teams" ref={lineManOneRef} style={{ height: '35px' }} >
+                    <select name="teams" ref={lineManOneRef} style={{ padding : '10px' }} >
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value={props.refree} selected disabled hidden>{props.refree}</option>
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ibrahim Nour Eldin">Ibrahim Nour Eldin</option>
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Abdelaziz Elsayed">Abdelaziz Elsayed</option>
@@ -178,7 +178,7 @@ function NewMatchForm(props) {
                 </div>
                 <div className={classes.control}>
                     <label htmlFor='LineManTwo'>Lineman<span className={classes.vip}> 2</span></label>
-                    <select name="teams" ref={lineManTwoRef} style={{ height: '35px' }} >
+                    <select name="teams" ref={lineManTwoRef} style={{ padding : '10px' }} >
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value={props.refree} selected disabled hidden>{props.refree}</option>
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Ibrahim Nour Eldin">Ibrahim Nour Eldin</option>
                         <option style = {{backgroundColor : "#273c75" , fontWeight : '600'}} value="Abdelaziz Elsayed">Abdelaziz Elsayed</option>
