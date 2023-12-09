@@ -48,8 +48,8 @@ function NewMatch() {
 
   return (
     <Layout>
-      <section>
-        <h1>Add Match</h1>
+      <section style = {{padding: '10px'}}>
+        <h1 style = {{textAlign : 'center' , fontWeight : 'bold' , marginBottom : '15px'}}>Add Match</h1>
         <NewMatchForm onAddMeetup={addMatchupHandler} text="Add Match" />
       </section>
     </Layout>
