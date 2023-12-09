@@ -46,17 +46,17 @@
 }
 
 .ShowMore {
-  height: 60vh;
+  height: 80vh;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.922);
-  padding: 1rem;
+  padding: 3rem;
   font-size: 20px;
   text-align: center;
   width: 50rem;
   z-index: 10;
   position: fixed;
-  top:20vh;
+  top:10vh;
   left: calc(50% - 23rem);
   overflow: auto;
 }
