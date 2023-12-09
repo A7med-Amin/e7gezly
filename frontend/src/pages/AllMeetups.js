@@ -4,10 +4,10 @@ import MeetupList from '../Components/meetups/MeetupList'
 const ABOUT_DATA = [
   {
     id: 'm1',
-    title: 'Lusail City',
+    title: 'Egyptian football federation',
     image:
       'https://images.unsplash.com/photo-1671171794557-a2444d109ab0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80',
-    address: 'City with most technology in the world',
+    address: '',
     description:
       'Lusail is Qatar first sustainable city. The foundation idea was to develop the city by combining true modernity with the richness of Qatari traditions and Islamic architecture. The coastal city of Lusail is located 22km to the north of Doha, spread over an area of 38km², with a waterfront location stretching over 28km.',
     des:
@@ -30,7 +30,7 @@ function AllMeetupsPage() {
   return (
     <Layout>
       <section>
-        <h1>About Qatar</h1>
+        <h1>About EPL</h1>
         <MeetupList meetups={ABOUT_DATA} />
       </section>
     </Layout>
