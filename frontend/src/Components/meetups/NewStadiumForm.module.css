@@ -2,6 +2,7 @@
     padding: 1rem;
     margin: auto;
     text-align: start;
+    width: 100%;
   }
   
   .control {
@@ -67,6 +68,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     padding: 3px;
     margin-bottom: 30px;
-    /* width: ; */
+    width: 30vw;
     margin: auto;
   }
