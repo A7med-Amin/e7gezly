@@ -3,7 +3,7 @@ import "./ImageBox.css";
 import { CgImage } from "react-icons/cg";
 import { BsDot } from "react-icons/bs";
 import UploadButton from "./UploadButton";
-import { SiCanva } from "react-icons/si";
+// import { SiCanva } from "react-icons/si";
 /**
  * @author Mahmoud Khaled
  * @param {}
