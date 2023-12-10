@@ -7,6 +7,7 @@ function NewMatchForm(props) {
     const [empdata, empdatachange] = useState(null);
     const [teams, setTeams] = useState([]);
 
+    console.log(props);
     // Refs
     const homeTeamRef = useRef();
     const awayTeamRef = useRef();
@@ -70,7 +71,8 @@ function NewMatchForm(props) {
         event.preventDefault();
         if (homeTeamRef.current.value === awayTeamRef.current.value) {
             alert("Same Team Cant be selected more than once");
-            console.log("Same Team Cant be selected more than once");
+            console.log("_______________")
+            console.log(homeTeamRef.current.value , awayTeamRef.current.value);
         }
         else if (mainRefreeRef.current.value === lineManOneRef.current.value || lineManTwoRef.current.value === mainRefreeRef.current.value || lineManTwoRef.current.value === lineManOneRef.current.value) {
             alert("Same Refree Cant be selected more than once");
@@ -91,7 +93,7 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Hteam'><span className={classes.vip}>Home</span> Team</label>
                     <select name="teams" ref={homeTeamRef} style={{ padding : '10px' }}>
-                        <option className={classes.optionstyle} value="" selected disabled hidden>{props.H_team}</option>
+                        <option className={classes.optionstyle} value={props.H_team} selected disabled hidden>{props.H_team}</option>
                         {teams.map((team, index) => (
                             <option className={classes.optionstyle} key={index} value={team.name}>{team.name}</option>
                         ))}
@@ -102,16 +104,17 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='Ateam'><span className={classes.vip}>Away</span> Team</label>
                     <select name="teams" ref={awayTeamRef} style={{ padding : '10px' }}>
-                        <option className={classes.optionstyle} value="" selected disabled hidden>{props.A_team}</option>
+                        <option className={classes.optionstyle} value={props.A_team} selected disabled hidden>{props.A_team}</option>
                         {teams.map((team, index) => (
                             <option className={classes.optionstyle} key={index} value={team.name}>{team.name}</option>
                         ))}
                     </select>
                 </div>
+
                 <div className={classes.control}>
                 <label htmlFor='Stad'><span className={classes.vip}>Stadium</span> Name</label>
                 <select name="teams" ref={stadiumRef} style={{ padding : '10px' }} >
-                    <option className={classes.optionstyle} selected disabled hidden>{props.Stadium}</option>
+                    <option className={classes.optionstyle} value={props.Stadium} selected disabled hidden>{props.Stadium}</option>
                     {empdata && empdata.map((item, key) => (
                         <option className={classes.optionstyle} value={item.name} key={key}>
                             {item.name}
@@ -140,7 +143,7 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='LineManOne'>Lineman<span className={classes.vip}> 1</span></label>
                     <select name="teams" ref={lineManOneRef} style={{ padding:'10px' }} >
-                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.line1}</option>
+                    <option className={classes.optionstyle} value={props.line1} selected disabled hidden>{props.line1}</option>
                     {referees.map((referee,index) => 
                         <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
@@ -150,7 +153,7 @@ function NewMatchForm(props) {
                 <div className={classes.control}>
                     <label htmlFor='LineManTwo'>Lineman<span className={classes.vip}> 2</span></label>
                     <select name="teams" ref={lineManTwoRef} style={{ padding:'10px' }} >
-                    <option className={classes.optionstyle} value={props.refree} selected disabled hidden>{props.line2}</option>
+                    <option className={classes.optionstyle} value={props.line2} selected disabled hidden>{props.line2}</option>
                     {referees.map((referee,index) => 
                         <option className={classes.optionstyle} key={index} value={referee}>{referee}</option>
                     )}
