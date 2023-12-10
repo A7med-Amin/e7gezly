@@ -1,15 +1,14 @@
 import Layout from "../Components/layout/Layout";
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import TicketsList from "../Components/meetups/TicketsList";
-import Spinner from 'react-bootstrap/Spinner';
-
+import Spinner from "react-bootstrap/Spinner";
 
 function YourTickets() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
-  var LoggedIn = localStorage.getItem('LoggedIn');
+  var LoggedIn = localStorage.getItem("LoggedIn");
   LoggedIn = JSON.parse(LoggedIn);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ function YourTickets() {
         for (const key in data) {
           const meetup = {
             id: key,
-            ...data[key]
+            ...data[key],
           };
 
           meetups.push(meetup);
@@ -37,8 +36,6 @@ function YourTickets() {
         setLoadedMeetups(meetups);
       });
   }, []);
-
-  console.log(loadedMeetups);
 
   if (isLoading) {
     return (
@@ -53,16 +50,15 @@ function YourTickets() {
   let content;
 
   if (loadedMeetups.length === 0) {
-    content = <div class = "NoTickets">No Tickets yet</div>
-  }
-  else {
-    content = <TicketsList meetups={loadedMeetups} />
+    content = <div class="NoTickets">No Tickets yet</div>;
+  } else {
+    content = <TicketsList meetups={loadedMeetups} />;
   }
 
   return (
     <Layout TicketsNum={loadedMeetups.length}>
       <section>
-        <h1 style={{ color: '#192a56', textAlign: 'center' }}>Your Tickets</h1>
+        <h1 style={{ color: "#192a56", textAlign: "center" }}>Your Tickets</h1>
         {content}
       </section>
     </Layout>
