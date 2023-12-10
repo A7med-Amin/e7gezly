@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Reservation from '../Components/meetups/CinemaMode';
-import Spinner from 'react-bootstrap/Spinner';
-import { useNavigate } from 'react-router-dom';
-
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Reservation from "../Components/meetups/CinemaMode";
+import Spinner from "react-bootstrap/Spinner";
+import { useNavigate } from "react-router-dom";
 
 function Seats() {
-
   const history = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
@@ -15,50 +13,41 @@ function Seats() {
   const { state } = useLocation();
   const { matchID, rows, seats_per_row } = state; // Read values passed on state
 
-  var LoggedIn = localStorage.getItem('LoggedIn');
+  var LoggedIn = localStorage.getItem("LoggedIn");
   LoggedIn = JSON.parse(LoggedIn);
   var TheRole;
 
   if (LoggedIn) {
     TheRole = LoggedIn[0]["role"];
-  }
-  else {
-    TheRole = 'G';
+  } else {
+    TheRole = "G";
   }
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      `${process.env.REACT_APP_API_URL}api/seats/${matchID}`
-    )
+    fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
       .then((response) => {
-        if(response.status === 405)
-        {
-          
-          alert(` The date is old ` );
-          history('/Matches');
-
+        if (response.status === 405) {
+          alert(` The date is old `);
+          history("/Matches");
+        } else {
+          return response.json();
         }
-        else{
-        return response.json();}
       })
       .then((data) => {
         const meetups = [];
-  
-        
+
         for (const key in data) {
           const meetup = {
             id: key,
-            ...data[key]
+            ...data[key],
           };
 
           meetups.push(meetup);
         }
 
-
         setIsLoading(false);
         setLoadedMeetups(meetups);
-      
       });
   }, []);
 
@@ -77,10 +66,15 @@ function Seats() {
         height: "100vh",
         overflow: "hidden",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
       }}
     >
-      <Reservation no={rows} seatsPerRow={seats_per_row} role={TheRole} matchData={loadedMeetups} />
+      <Reservation
+        no={rows}
+        seatsPerRow={seats_per_row}
+        role={TheRole}
+        matchData={loadedMeetups}
+      />
     </section>
   );
 }
