@@ -3,9 +3,12 @@ import { useLocation } from "react-router-dom";
 import Reservation from "../Components/meetups/CinemaMode";
 import Spinner from "react-bootstrap/Spinner";
 import { useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 
 function Seats() {
   const history = useNavigate();
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalError, setModalError] = useState("");
 
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
@@ -28,7 +31,8 @@ function Seats() {
     fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
       .then((response) => {
         if (response.status === 405) {
-          alert(` The date is old `);
+          setModalVisible(true);
+          setModalError("The date is old");
           history("/Matches");
         } else {
           return response.json();
@@ -69,6 +73,27 @@ function Seats() {
         backgroundSize: "cover",
       }}
     >
+      <Modal
+        show={modalVisible}
+        onHide={() => {
+          setModalVisible(false);
+        }}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Input error</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modalError}</Modal.Body>
+        <Modal.Footer>
+          <button
+            className="modal-button"
+            onClick={() => {
+              setModalVisible(false);
+            }}
+          >
+            Close
+          </button>
+        </Modal.Footer>
+      </Modal>
       <Reservation
         no={rows}
         seatsPerRow={seats_per_row}

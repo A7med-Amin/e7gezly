@@ -69,7 +69,6 @@ export const Signup = () => {
         "Minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number"
       );
     } else if (new Date(event.target.date.value) > Date.now()) {
-      alert("Date cannot be in the future");
       setModalVisible(true);
       setModalError("Date cannot be in the future");
     } else if (email_pattern.test(signup_data.email) == null) {
