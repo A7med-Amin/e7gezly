@@ -76,7 +76,6 @@ function BouhgtTickets(props) {
         } else if (res.status !== 200) {
           alert(" Server Error");
         } else {
-          alert("Removed Succesfuly");
           window.location.reload(false);
         }
       })
