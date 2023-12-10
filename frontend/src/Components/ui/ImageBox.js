@@ -52,20 +52,6 @@ const ImageBox = (props) => {
           Delete Photo
         </button>
       )}
-      <div className="photo__requirement" data-testid="photo__requirements">
-        <p>
-          <BsDot className="dot" />
-          Recommended image size: 2160 x 1080px
-        </p>
-        <p>
-          <BsDot className="dot" />
-          Maximum file size: 10MB
-        </p>
-        <p>
-          <BsDot className="dot" />
-          Supported image files: JPEG or PNG
-        </p>
-      </div>
       {/* <img src = {props.imageLink} /> */}
     </div>
   );

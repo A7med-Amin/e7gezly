@@ -21,7 +21,7 @@ function NewStaium() {
     ).then((res) => {
       console.log(meetupData);
       if (res.status !== 200) {
-        alert(" Can't add a stadium of same name " );
+        alert(" Error in adding the stadium " );
       }
       else {
         history('/Home');

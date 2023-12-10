@@ -26,7 +26,12 @@ function EditMatch(props) {
         } else if (res.status === 405) {
           setModalVisible(true);
           setModalError("The date is old");
-        } else if (res.status === 200) {
+        }
+        else if (res.status === 400) {
+          setModalVisible(true);
+          setModalError("This stadium has a match at the same time");
+        } 
+        else if (res.status === 200) {
           history("/Matches");
           props.onConfirm();
           window.location.reload(false);

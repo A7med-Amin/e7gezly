@@ -80,7 +80,7 @@ function NewMatchForm(props) {
         }
         else {
             if (props.text === "Edit Match" && stadiumRef.current.value !== props.Stadium) {
-                alert("Changing match stadium will automatically Delete all match tickets");
+                // alert("Changing match stadium will automatically Delete all match tickets");
             }
             submitHandler();
         }
