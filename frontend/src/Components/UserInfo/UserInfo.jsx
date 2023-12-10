@@ -97,7 +97,7 @@ const UserInfo = (props) => {
         birthdate: birthdate,
         gender: Gender,
         nationality: Nation,
-        // address: Address,
+        address: Address,
       };
       props.onAddMeetup(meetupData);
     } else {
@@ -108,7 +108,7 @@ const UserInfo = (props) => {
         birthdate: birthdate,
         gender: Gender,
         nationality: Nation,
-        // address: Address,
+        address: Address,
       };
       props.onAddMeetup(meetupData);
     }
