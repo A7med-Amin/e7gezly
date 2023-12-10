@@ -9,6 +9,10 @@ function BouhgtTickets(props) {
     // const BoughtTickets = useContext(TicketsContext);
     // // const IsBought = BoughtTickets.itemIsBought(props.id);
 
+    console.log("______________");
+    console.log(props);
+    console.log("______________");
+
     const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     const [modalIsOpen, SetModalIsOpen] = useState(false);
@@ -63,10 +67,10 @@ function BouhgtTickets(props) {
     return (
         <li className={classes.item}>
             <Card>
-                <div className={classes.Teams}>
-                    <h4>{props.match.h_team}</h4>
-                    <h3 style={{ color: '#273c75' }}>VS</h3>
-                    <h4>{props.match.a_team}</h4>
+                <div className={classes.Teams} style={{paddingBottom: '20px' , height: '15vh'}}>
+                    <img src={props.match.H_team.link} alt={props.match.H_team.name} />
+                    <h3 className= {classes.vs}>VS</h3>
+                    <img src={props.match.A_team.link} alt={props.match.A_team.name} />
                     
                 </div>
                 <div className={`${classes.content} ${classes.divaya}`}>
