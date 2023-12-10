@@ -35,9 +35,7 @@ function NewStaium() {
     <Layout>
       <section>
         <h1 style = {{fontWeight : 'bold' , textAlign : 'center' , marginBottom : '15px'}}>Add Stadium</h1>
-        <div className = {classes.cardoutsidelayoyt}>
           <NewStadiumForm onAddMeetup={addStadupHandler} />
-        </div>  
       </section>
     </Layout>
   );

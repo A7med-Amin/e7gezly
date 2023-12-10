@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import Card from '../ui/Card';
+// import Card from '../ui/Card';
 import classes from './NewStadiumForm.module.css';
 
 function NewStadiumForm(props) {
@@ -42,7 +42,7 @@ function NewStadiumForm(props) {
   }
 
   return (
-    <Card>
+    <div className = {classes.newstadlayout}>
       <form className={classes.form} onSubmit={ValidateSeats}>
       <div className={classes.control}>
           <label htmlFor='name'><span className={classes.vip}>Stadium</span> Name</label>
@@ -74,7 +74,7 @@ function NewStadiumForm(props) {
           <button>Add Stadium</button>
         </div>
       </form>
-    </Card>
+    </div>
   );
 }
 
