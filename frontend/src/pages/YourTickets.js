@@ -37,6 +37,8 @@ function YourTickets() {
       });
   }, []);
 
+  // console.log(loadedMeetups);
+
   if (isLoading) {
     return (
       <Layout>
