@@ -8,7 +8,7 @@
 
   .vip{
     color: #273c75;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     font-size: large;
   }
   
@@ -53,8 +53,8 @@
     color: white;
   }
   .select_options {
-    background-color: #273c75;
-    color: white;
+    background-color: white;
+    color: #1b357d;
   }
   .userInputField
   {
@@ -67,6 +67,8 @@
   .type
   {
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
   }
   .femaleMaleContainer{
     display: flex;
@@ -85,17 +87,21 @@
   .nationalityOptions{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
   }
   .nationalityLabel{
     font-weight: bold;
   }
   .nationalitySelect{
-    background-color: #273c75;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    /* color: whitesmoke; */
     padding: 10px;
     border-radius: 10px;
-    font-weight: bold;
+    /* font-weight: bold; */
     appearance: none;
+    margin-top: 6px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
   }
   .roleContainer{
     display: flex;

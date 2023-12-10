@@ -145,36 +145,34 @@ const UserInfo = (props) => {
                     <input className = 'userInputField' type='date' required id='birth' ref={birthRef} defaultValue={loadedMeetups.birthdate} />
                 </div>
 
-                <div className = 'infoContainer'>
-                    <div className="type">
-                        <div className = 'femaleMaleContainer'>
-                            <input type="radio" required id="gender" value="F" name="gender" ref={FgenderRef} checked={MaleFemale === "F" ? true : false} onClick={() => setMaleFemale('F')} className = 'inputGender' />
-                            <label htmlFor="female">Female</label>
-                        </div>
-                        <div className = 'femaleMaleContainer'>
-                            <input type="radio" required id="gender" value="M" name="gender" ref={MgenderRef} checked={MaleFemale === "M" ? true : false} onClick={() => setMaleFemale('M')} className = 'inputGender' />
-                            <label htmlFor="male">Male</label>
-                        </div>
+
+                <div className="type">
+                <label className = 'roleLabel' htmlFor="">Gender</label>
+                    <div className = 'femaleMaleContainer'>
+                        <input type="radio" required id="gender" value="F" name="gender" ref={FgenderRef} checked={MaleFemale === "F" ? true : false} onClick={() => setMaleFemale('F')} className = 'inputGender' />
+                        <label htmlFor="female">Female</label>
                     </div>
-                    <div className = 'nationalityOptions'>
-                        <label className = 'nationalityLabel' htmlFor="nationality">Nationality</label>
+                    <div className = 'femaleMaleContainer'>
+                        <input type="radio" required id="gender" value="M" name="gender" ref={MgenderRef} checked={MaleFemale === "M" ? true : false} onClick={() => setMaleFemale('M')} className = 'inputGender' />
+                        <label htmlFor="male">Male</label>
+                    </div>
+                </div>
+
+                <div className = 'nationalityOptions'>
+                        <label className = 'roleLabel' htmlFor="nationality">Nationality</label>
                         <select className = 'nationalitySelect' name="nationality" id="nationality" ref={NationRef}>
                             <option className = 'select_options' value={loadedMeetups.nationality} selected disabled hidden>{loadedMeetups.nationality}</option>
                             {nationalityOptions.map((nationality) => (
                                 <option value = {nationality} className = 'select_options'>{nationality}</option>
                             ))}
                         </select>
-                    </div>
                 </div>
-                <div className="options_type">
-                    <div className="roleContainer">
+
+                <div className="control">
                         <label className = 'roleLabel' htmlFor="">Role</label>
-                        <select className = 'roleSelect' name="role" id="role" ref={roleRef} disabled>
-                            {/* role from local storage */}
-                            <option value={loadedMeetups.role}>{theRole}</option>
-                        </select>
-                    </div>
+                        <input className = 'userInputField' type='text' placeholder='role' required id='role' ref={roleRef} disabled value={theRole} />
                 </div>
+
                 <div className='actions'>
                     <button>Update</button>
                 </div>
