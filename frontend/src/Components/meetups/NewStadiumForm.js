@@ -1,73 +1,98 @@
-import { useRef } from 'react';
+import { useRef, useState } from "react";
 
-// import Card from '../ui/Card';
-import classes from './NewStadiumForm.module.css';
+// import Card from "../ui/Card";
+import classes from "./NewStadiumForm.module.css";
+import ImageBox from "../ui/ImageBox";
 
 function NewStadiumForm(props) {
   const nameInputRef = useRef();
   const rowInputRef = useRef();
   const colInputRef = useRef();
-  const imgInputRef = useRef();
   const descriptionInputRef = useRef();
+  const [imageLink, setImageLink] = useState("");
 
   function submitHandler() {
     const enteredName = nameInputRef.current.value;
     const enteredrow = rowInputRef.current.value;
     const enteredcol = colInputRef.current.value;
-    const enteredImage = imgInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
     const meetupData = {
       name: enteredName,
       rows: enteredrow,
       seats_per_row: enteredcol,
-      link: enteredImage,
-      description: enteredDescription
+      link: imageLink,
+      description: enteredDescription,
     };
 
     props.onAddMeetup(meetupData);
   }
 
-  function ValidateSeats(event)
-  {
+  function ValidateSeats(event) {
     event.preventDefault();
 
-    if(rowInputRef.current.value<=0 || rowInputRef.current.value>5 || colInputRef.current.value <=0 || colInputRef.current.value >10 )
-    {
+    if (
+      rowInputRef.current.value <= 0 ||
+      rowInputRef.current.value > 5 ||
+      colInputRef.current.value <= 0 ||
+      colInputRef.current.value > 10
+    ) {
       alert("Rows must be in range 0-5 And Seats must be in range 1-10");
-    }
-    else{
+    } else {
       submitHandler();
     }
   }
 
   return (
-    <div className = {classes.newstadlayout}>
+    <div className={classes.newstadlayout}>
       <form className={classes.form} onSubmit={ValidateSeats}>
-      <div className={classes.control}>
-          <label htmlFor='name'><span className={classes.vip}>Stadium</span> Name</label>
-          <input style = {{padding : '15px'}} type='text' required id='name' ref={nameInputRef} />
+        <div className={classes.control}>
+          <label htmlFor="name">
+            <span className={classes.vip}>Stadium</span> Name
+          </label>
+          <input
+            style={{ padding: "15px" }}
+            type="text"
+            required
+            id="name"
+            ref={nameInputRef}
+          />
         </div>
         <div className={classes.control}>
-          <label htmlFor='rows'><span className={classes.vip}>VIP</span> Lounge Rows</label>
-          <input style = {{padding : '15px'}} type='text' required id='rows' ref={rowInputRef} />
+          <label htmlFor="rows">
+            <span className={classes.vip}>VIP</span> Lounge Rows
+          </label>
+          <input
+            style={{ padding: "15px" }}
+            type="text"
+            required
+            id="rows"
+            ref={rowInputRef}
+          />
         </div>
         <div className={classes.control}>
-          <label htmlFor='seats_per_row'>Row Number Of Seats</label>
-          <input style = {{padding : '15px'}} type='text' required id='seats_per_row' ref={colInputRef} />
+          <label htmlFor="seats_per_row">Row Number Of Seats</label>
+          <input
+            style={{ padding: "15px" }}
+            type="text"
+            required
+            id="seats_per_row"
+            ref={colInputRef}
+          />
         </div>
-        <div className={classes.control}>
+        <ImageBox imageLink={imageLink} setImageLink={setImageLink} />
+        {/* <div className={classes.control}>
           <label htmlFor='link'>Stadium Image</label>
           <input style = {{padding : '15px'}} type='url'  id='link' ref={imgInputRef} />
-        </div>
+        </div> */}
         <div className={classes.control}>
-          <label htmlFor='description'>Description</label>
+          <label htmlFor="description">Description</label>
           <textarea
-            id='description'
+            id="description"
             required
-            rows='4'
+            rows="4"
             ref={descriptionInputRef}
-            style = {{padding : '15px'}}
+            style={{ padding: "15px" }}
           ></textarea>
         </div>
         <div className={classes.actions}>

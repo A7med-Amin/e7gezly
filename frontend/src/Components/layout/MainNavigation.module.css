@@ -50,6 +50,8 @@
 
 .logoicon {
   filter: drop-shadow(0 00px 10px var(--accent-color));
+  margin-left: 1rem;
+  cursor: pointer;
 }
 
 :root {

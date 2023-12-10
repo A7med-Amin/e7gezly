@@ -1,16 +1,16 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from "react";
 
 const TicketsContext = createContext({
   tickets: [],
   totaltickets: 0,
   addTicket: (boughtTicket) => {},
   removeTicket: (matchID) => {},
-  itemIsBought: (matchID) => {}
+  itemIsBought: (matchID) => {},
 });
 
 export function TicketsContextProvider(props) {
   const [userTickets, setUserTickets] = useState([]);
-
+  const [userTicketCount, setUserTicketCount] = useState(0);
   function addTicketeHandler(boughtTicket) {
     setUserTickets((prevUserTickets) => {
       return prevUserTickets.concat(boughtTicket);
@@ -18,24 +18,42 @@ export function TicketsContextProvider(props) {
   }
 
   function removeTicketeHandler(matchID) {
-    setUserTickets(prevUserTickets => {
-        // meetup.id is the match id
-      return prevUserTickets.filter(meetup => meetup.id !== matchID);
+    setUserTickets((prevUserTickets) => {
+      // meetup.id is the match id
+      return prevUserTickets.filter((meetup) => meetup.id !== matchID);
     });
   }
 
   function itemIsTicketHandler(matchID) {
     // meetup.id is the match id
-    return userTickets.some(meetup => meetup.id === matchID);
+    return userTickets.some((meetup) => meetup.id === matchID);
   }
+
+  var LoggedIn = localStorage.getItem("LoggedIn");
+  LoggedIn = JSON.parse(LoggedIn);
 
   const context = {
     tickets: userTickets,
-    totaltickets: userTickets.length,
+    totaltickets: userTicketCount,
     addTicket: addTicketeHandler,
     removeTicket: removeTicketeHandler,
-    itemIsBought: itemIsTicketHandler
+    itemIsBought: itemIsTicketHandler,
   };
+  useEffect(() => {
+    fetch(
+      /*Get user name from local storage */
+      `${process.env.REACT_APP_API_URL}api/tickets/${LoggedIn[0]["username"]}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        context.tickets = data;
+        context.totaltickets = data.length;
+        setUserTickets(data);
+        setUserTicketCount(data.length);
+      });
+  }, []);
 
   return (
     <TicketsContext.Provider value={context}>
