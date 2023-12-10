@@ -3,9 +3,9 @@ import classes from "./MainNavigation.module.css";
 import logo from "./Icon.png";
 import "./Navbar.css";
 import { useContext, useEffect } from "react";
-import { TicketsContextProvider } from "../../pages/store/UserTickets_Context";
+import { TicketsContext } from "../../pages/store/UserTickets_Context";
 function MainNavigation(props) {
-  const tickets = useContext(TicketsContextProvider);
+  const tickets = useContext(TicketsContext);
   console.log("totalTickets", tickets);
   const navigate = useNavigate();
   function LoggingOut() {
@@ -71,7 +71,7 @@ function MainNavigation(props) {
               </Link>
               <Link to="/yourtickets" className="navbar-element">
                 Your Tickets
-                <span className={classes.badge}>{1 ?? 0}</span>
+                <span className={classes.badge}>{tickets ?? 0}</span>
               </Link>
               <Link to="/matches" className="navbar-element">
                 Matches

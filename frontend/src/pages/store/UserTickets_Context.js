@@ -1,12 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-const TicketsContext = createContext({
-  tickets: [],
-  totaltickets: 0,
-  addTicket: (boughtTicket) => {},
-  removeTicket: (matchID) => {},
-  itemIsBought: (matchID) => {},
-});
+export const TicketsContext = createContext();
 
 export function TicketsContextProvider(props) {
   const [userTickets, setUserTickets] = useState([]);
@@ -56,7 +50,7 @@ export function TicketsContextProvider(props) {
   }, []);
 
   return (
-    <TicketsContext.Provider value={context}>
+    <TicketsContext.Provider value={ userTicketCount }>
       {props.children}
     </TicketsContext.Provider>
   );
