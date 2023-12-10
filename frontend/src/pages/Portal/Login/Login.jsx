@@ -1,13 +1,12 @@
 import React from "react";
 import "../Portal.css";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../Icon.png";
 import { password_pattern } from "../utils";
 import "./Login.css";
-import InfoModal from "../../../Components/Modal/InfoModal";
-import { Button, Modal } from "react-bootstrap/";
+import { Modal } from "react-bootstrap/";
 export const Login = () => {
   const navigate = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
