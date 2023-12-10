@@ -34,6 +34,9 @@ export function TicketsContextProvider(props) {
     itemIsBought: itemIsTicketHandler,
   };
   useEffect(() => {
+    if(!LoggedIn){
+      return;
+    }
     fetch(
       /*Get user name from local storage */
       `${process.env.REACT_APP_API_URL}api/tickets/${LoggedIn[0]["username"]}`
