@@ -15,6 +15,8 @@ const UserInfo = (props) => {
     const FgenderRef = useRef();
     const NationRef = useRef();
     const roleRef = useRef();
+    const address = useRef();
+
     // const [Passo, SetPasso] = useState("false");
     let Passo="false";
     var theRole;
@@ -60,6 +62,7 @@ const UserInfo = (props) => {
         const birthdate = birthRef.current.value;
         const Gender = Gndr;
         const Nation = NationRef.current.value;
+        const Address = address.current.value;
 
         /*Paswords check*/
         console.log(oldpasswordRef.current.value.length);
@@ -91,6 +94,7 @@ const UserInfo = (props) => {
                 birthdate: birthdate,
                 gender: Gender,
                 nationality: Nation,
+                // address: Address,
             };
             props.onAddMeetup(meetupData);
         }
@@ -102,12 +106,40 @@ const UserInfo = (props) => {
                 birthdate: birthdate,
                 gender: Gender,
                 nationality: Nation,
+                // address: Address,
             };
             props.onAddMeetup(meetupData);
         }
     }
-    const nationalityOptions = [
-      "Afghan","Albanian","Algerian","American","Andorran","Angolan","Antiguans","Argentinean","Armenian","Australian","Austrian","Azerbaijani","Bahamian","Bahraini","Bangladeshi","Barbadian","Barbudans","Batswana","Belarusian","Belgian","Belizean","Beninese","Bhutanese","Bolivian","Bosnian","Brazilian","British","Bruneian","Bulgarian","Burkinabe","Burmese","Burundian","Cambodian","Cameroonian","Canadian","Cape Verdean","Central African","Chadian","Chilean","Chinese","Colombian","Comoran","Congolese","Costa Rican","Croatian","Cuban","Cypriot","Czech","Danish","Djibouti","Dominican","Dutch","East Timorese","Ecuadorean","Egyptian","Emirian","Equatorial Guinean","Eritrean","Estonian","Ethiopian","Fijian","Filipino","Finnish","French","Gabonese","Gambian","Georgian","German","Ghanaian","Greek","Grenadian","Guatemalan","Guinea-Bissauan","Guinean","Guyanese","Haitian","Herzegovinian","Honduran","Hungarian","Icelander","Indian","Indonesian","Iranian","Iraqi","Irish","Italian","Ivorian","Jamaican","Japanese","Jordanian","Kazakhstani","Kenyan","Kittian and Nevisian","Kuwaiti","Kyrgyz","Laotian","Latvian","Lebanese","Liberian","Libyan","Liechtensteiner","Lithuanian","Luxembourger","Macedonian","Malagasy","Malawian","Malaysian","Maldivan","Malian","Maltese","Marshallese","Mauritanian","Mauritian","Mexican","Micronesian","Moldovan","Monacan","Mongolian","Moroccan","Mosotho","Motswana","Mozambican","Namibian","Nauruan","Nepalese","New Zealander","Ni-Vanuatu","Nicaraguan","Nigerien","North Korean","Northern Irish","Norwegian","Omani","Palestinian","Pakistani","Palauan","Panamanian","Papua New Guinean","Paraguayan","Peruvian","Polish","Portuguese","Qatari","Romanian","Russian","Rwandan","Saint Lucian","Salvadoran","Samoan","San Marinese","Sao Tomean","Saudi","Scottish","Senegalese","Serbian","Seychellois","Sierra Leonean","Singaporean","Slovakian","Slovenian","Solomon Islander","Somali","South African","South Korean","Spanish","Sri Lankan","Sudanese","Surinamer","Swazi","Swedish","Swiss","Syrian","Taiwanese","Tajik","Tanzanian","Thai","Togolese","Tongan","Trinidadian or Tobagonian","Tunisian","Turkish","Tuvaluan","Ugandan","Ukrainian","Uruguayan","Uzbekistani","Venezuelan","Vietnamese","Welsh","Yemenite","Zambian","Zimbabwean",
+
+    const egyptGovernorates = [
+        "Alexandria",
+        "Aswan",
+        "Asyut",
+        "Beheira",
+        "Beni Suef",
+        "Cairo",
+        "Dakahlia",
+        "Damietta",
+        "Faiyum",
+        "Gharbia",
+        "Giza",
+        "Ismailia",
+        "Kafr El Sheikh",
+        "Luxor",
+        "Matruh",
+        "Minya",
+        "Monufia",
+        "New Valley",
+        "North Sinai",
+        "Port Said",
+        "Qalyubia",
+        "Qena",
+        "Red Sea",
+        "Sharqia",
+        "Sohag",
+        "South Sinai",
+        "Suez"
     ];
   return (
         <Card>
@@ -159,13 +191,18 @@ const UserInfo = (props) => {
                 </div>
 
                 <div className = 'nationalityOptions'>
-                        <label className = 'roleLabel' htmlFor="nationality">Nationality</label>
+                        <label className = 'roleLabel' htmlFor="nationality">City</label>
                         <select className = 'nationalitySelect' name="nationality" id="nationality" ref={NationRef}>
                             <option className = 'select_options' value={loadedMeetups.nationality} selected disabled hidden>{loadedMeetups.nationality}</option>
-                            {nationalityOptions.map((nationality) => (
+                            {egyptGovernorates.map((nationality) => (
                                 <option value = {nationality} className = 'select_options'>{nationality}</option>
                             ))}
                         </select>
+                </div>
+
+                <div className = 'control'>
+                    <label htmlFor='last_name'><span className = 'vip'>Address</span></label>
+                    <input className = 'userInputField' type='text' placeholder='address' required id='adress' ref={address} defaultValue={loadedMeetups.address} />
                 </div>
 
                 <div className="control">
