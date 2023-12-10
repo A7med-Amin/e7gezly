@@ -55,7 +55,7 @@ export const Login = () => {
             setModalError("Unapproved manager");
           } else if (err.response.status === 404) {
             setModalVisible(true);
-            setModalError("No user with this data");
+            setModalError("No user with this data or password is incorrect");
           } else if (err.response.status === 500) {
             setModalVisible(true);
             setModalError("Server Error");
