@@ -2,6 +2,7 @@
   --main-color: #273c75;
   --secondary-color: #192a56;
   --hover-color: #4a69bd;
+  --accent-color: #4c8bf5;
 }
 
 nav {
@@ -16,6 +17,8 @@ nav {
 }
 .navbar-element:hover {
   text-decoration: none;
+  filter: drop-shadow(0 00px 20px var(--accent-color));
+
 }
 .navbar-element {
   text-decoration: none;
