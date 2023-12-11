@@ -156,10 +156,14 @@ const UserInfo = (props) => {
         </Modal.Header>
         <Modal.Body>{modalError}</Modal.Body>
         <Modal.Footer>
-          <button className="modal-button" onClick={() => {}}>
+          <button
+            className="modal-button"
+            onClick={() => {
+              setModalVisible(false);
+            }}
+          >
             Close
           </button>
-          <button className="modal-button">Confirm</button>
         </Modal.Footer>
       </Modal>
       <Card>
