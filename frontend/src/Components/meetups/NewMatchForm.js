@@ -105,12 +105,8 @@ function NewMatchForm(props) {
             if (
                 props.text === "Edit Match" &&
                 stadiumRef.current.value !== props.Stadium
-            ) {
-                setModalVisible(true);
-                setModalError(
-                    "Changing match stadium will automatically Delete all match tickets"
-                );
-            }
+            ) 
+            console.log("success");
             submitHandler();
         }
     }

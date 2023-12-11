@@ -20,6 +20,9 @@ function EditMatch(props) {
         if (res.status === 401) {
           setModalVisible(true);
           setModalError("One of 2 teams has a match at the same time");
+        } else if (res.status === 402) {
+          setModalVisible(true);
+          setModalError("One of the referees has a match in the same day");
         } else if (res.status === 403) {
           setModalVisible(true);
           setModalError("There is a clashing match at same stadium");
