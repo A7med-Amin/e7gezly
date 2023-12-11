@@ -13,7 +13,6 @@ function Approve(props) {
           alert("Server Error ");
         } else {
           Approvechange(true);
-          alert("Approved successfully.");
           window.location.reload();
         }
       })
