@@ -3,8 +3,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import TicketsList from "../Components/meetups/TicketsList";
 import Spinner from "react-bootstrap/Spinner";
+import Pagination from '../Components/pagination/Pagination';
+
 
 function YourTickets() {
+
+  // pagination 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9; // Set the number of items per page
+
+
+  // fetching
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
 
@@ -37,7 +46,12 @@ function YourTickets() {
       });
   }, []);
 
-  // console.log(loadedMeetups);
+  // pagination
+  // Calculate the current items to display
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = loadedMeetups.slice(indexOfFirstItem, indexOfLastItem);
+
 
   if (isLoading) {
     return (
@@ -51,10 +65,10 @@ function YourTickets() {
 
   let content;
 
-  if (loadedMeetups.length === 0) {
+  if (currentItems.length === 0) {
     content = <div class="NoTickets">No Tickets yet</div>;
   } else {
-    content = <TicketsList meetups={loadedMeetups} />;
+    content = <TicketsList meetups={currentItems} />; // Display the current items
   }
 
   return (
@@ -62,6 +76,12 @@ function YourTickets() {
       <section>
         <h1 style={{ color: "#192a56", textAlign: "center" }}>Your Tickets</h1>
         {content}
+        <Pagination
+          totalItems={loadedMeetups.length}
+          itemsPerPage={itemsPerPage}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        /> {/* Add the Pagination component */}
       </section>
     </Layout>
   );
