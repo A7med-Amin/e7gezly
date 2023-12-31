@@ -71,7 +71,7 @@ function MainNavigation(props) {
               </Link>
               <Link to="/yourtickets" className="navbar-element">
                 Your Tickets
-                <span className={classes.badge}>{tickets ?? 0}</span>
+                {/* <span className={classes.badge}>{tickets ?? 0}</span> */}
               </Link>
               <Link to="/matches" className="navbar-element">
                 Matches
@@ -113,5 +113,4 @@ function MainNavigation(props) {
 
   return <WhatUser />;
 }
-
 export default MainNavigation;

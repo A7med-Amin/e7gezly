@@ -8,3 +8,21 @@
     margin: 0;
     padding: 0;
   }
+.homeList
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+@media only screen and (min-width: 400px) and (max-width: 950px){
+  .homeList{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -1,5 +1,4 @@
 .item {
-    margin: 1rem 0;
   }
   
   .image {
@@ -63,4 +62,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  @media only screen and (min-width: 400px) and (max-width: 950px){
+    .infocard
+    {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    width: 80vw !important;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
   }
