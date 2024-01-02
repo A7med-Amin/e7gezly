@@ -28,7 +28,7 @@ function Seats() {
 
   useEffect(() => {
     setIsLoading(true);
-
+    console.log(global.countofseats);
     fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
       .then((response) => {
         if (response.status === 405) {
@@ -50,31 +50,33 @@ function Seats() {
 
           meetups.push(meetup);
         }
-
+        console.log(global.countofseats);
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
 
-    setInterval(() => {
-      fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
-        .then((response) => {
-          if (response.status === 405) {
-          } else {
-            return response.json();
-          }
-        })
-        .then((data) => {
-          const meetups = [];
-          for (const key in data) {
-            const meetup = {
-              id: key,
-              ...data[key],
-            };
-            meetups.push(meetup);
-          }
-          setLoadedMeetups(meetups);
-        });
-    }, 1000);
+    const fetchData = async () => {
+      const response = fetch(
+        `${process.env.REACT_APP_API_URL}api/seats/${matchID}`
+      ).then((data) => {
+        const meetups = [];
+
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+
+          meetups.push(meetup);
+        }
+        setIsLoading(false);
+        setLoadedMeetups(meetups);
+      });
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   if (isLoading) {

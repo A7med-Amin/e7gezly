@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 
 function Reservation(props) {
-  global.countofseats = 0;
+  // global.countofseats = 0;
   const [modalVisible, setModalVisible] = useState(false);
   const [modalError, setModalError] = useState("");
   const navigate = useNavigate();
