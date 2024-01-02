@@ -56,7 +56,7 @@ function Creditcard(props) {
           Fetching(global.arrreserved[i]);
         }
       }
-      navigate("/YourTickets");
+      navigate("/Home");
     }
   }
 
