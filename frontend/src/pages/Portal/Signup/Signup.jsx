@@ -54,6 +54,7 @@ export const Signup = () => {
 
     // Check if inputs meet the requirements
     const split_name = signup_data.fullname.split(" ");
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (split_name.length < 2) {
       setModalVisible(true);
       setModalError("Name must be at least 2 words");
@@ -71,7 +72,7 @@ export const Signup = () => {
     } else if (new Date(event.target.date.value) > Date.now()) {
       setModalVisible(true);
       setModalError("Date cannot be in the future");
-    } else if (email_pattern.test(signup_data.email) == null) {
+    } else if (email_pattern.test(signup_data.email) == null || !email_pattern.test(regex)) {
       setModalVisible(true);
       setModalError("Invalid email format");
     } else {
