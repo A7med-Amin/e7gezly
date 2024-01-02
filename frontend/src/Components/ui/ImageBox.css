@@ -103,7 +103,7 @@
 @media screen and (max-width: 1260px) and (min-width: 1200px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 300px;
+    width: 480px;
     height: 285px;
     position: relative;
     margin-top: 15px;
@@ -153,7 +153,7 @@
 @media screen and (max-width: 1200px) and (min-width: 1100px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 280px;
+    width: 480px;
     height: 252px;
     position: relative;
     margin-top: 15px;
@@ -203,7 +203,7 @@
 @media screen and (max-width: 1100px) and (min-width: 1000px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 260px;
+    width: 400px;
     height: 219px;
     position: relative;
     margin-top: 15px;
@@ -253,7 +253,7 @@
 @media screen and (max-width: 1000px) and (min-width: 960px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 260px;
+    width: 400px;
     height: 219px;
     position: relative;
     margin-top: 15px;
@@ -308,7 +308,7 @@
 @media screen and (max-width: 792px) and (min-width: 660px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 260px;
+    width: 400px;
     height: 285px;
     position: relative;
     margin-top: 15px;
@@ -358,7 +358,7 @@
 @media screen and (max-width: 885px) and (min-width: 792px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 260px;
+    width: 460px;
     height: 285px;
     position: relative;
     margin-top: 15px;
@@ -408,7 +408,7 @@
 @media screen and (max-width: 792px) and (min-width: 720px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 260px;
+    width: 460px;
     height: 285px;
     position: relative;
     margin-top: 15px;
@@ -458,7 +458,7 @@
 @media screen and (max-width: 500px) and (min-width: 400px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 370px;
+    width: 270px;
     height: 185px;
     position: relative;
     margin-top: 15px;
@@ -500,7 +500,7 @@
 @media screen and (max-width: 600px) and (min-width: 500px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 470px;
+    width: 360px;
     height: 185px;
     position: relative;
     margin-top: 15px;
@@ -542,7 +542,7 @@
 @media screen and (max-width: 660px) and (min-width: 600px) {
   .Image__fileType {
     background-color: rgb(248, 247, 250);
-    width: 570px;
+    width: 400px;
     height: 185px;
     position: relative;
     margin-top: 15px;

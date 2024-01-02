@@ -36,7 +36,7 @@ const UploadButton = (props) => {
     <>
       <button id="upload__btn" onClick={handleClick} className="upload__btn">
         <div className="flex flex-row ">
-          <CgImage className="img__logo" />
+          {/* <CgImage className="img__logo" /> */}
           <div className="ml-2"> Upload Image</div>
         </div>
       </button>
