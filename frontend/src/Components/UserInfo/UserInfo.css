@@ -1,11 +1,19 @@
 .form {
     padding: 1rem;
+    min-width: 30vw;
   }
   
   .control {
     margin-bottom: 0.5rem;
   }
-
+.profileCard{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    min-width: 30vw;
+}
   .vip{
     color: #273c75;
     /* font-weight: bolder; */
@@ -124,4 +132,9 @@
   }
   .inputGender{
     margin-right: 5px;
+  }
+  @media only screen and (min-width: 400px) and (max-width: 1050px){
+    .profileCard{
+      width: 80vw;
+    }
   }

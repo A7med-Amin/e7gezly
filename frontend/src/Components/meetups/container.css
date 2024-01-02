@@ -25,11 +25,13 @@
 .seat{
     width:30px;
     height:20px;
-    border-top-left-radius:10px;
-    border-top-right-radius: 10px;
-    background:#777;
+    /* border-top-left-radius:10px;
+    border-top-right-radius: 10px; */
+    background: red;
+    border-radius: 20%;
     margin:5px;
-    background-image:url("/assets/Images/Icons/ball.gif");
+    transition: all ease-in-out 0.3s;
+    /* background-image:url("/assets/Images/Icons/ball.gif"); */
 }
 .seat.selected{
     background:#6fea6f;
@@ -38,8 +40,9 @@
     background:#45aaf2;
 }
 .seat:not(.occupied):hover{
-    transform:scale(1.5);
+    transform:scale(1.2);
     cursor:pointer;
+    background-color: #ca1a1a;
 }
 .showcase .seat:not(.occupied):hover{
     transform:scale(1);
@@ -52,7 +55,6 @@
     margin-left:20px;
 }
 .rows{
-    display:flex;
 }
 .container{
     margin-bottom:20px;
@@ -60,11 +62,9 @@
 }
 .chairs
 {
-    margin-left: 25vh;
 }
 .balls
 {
-    margin-left: 260px !important;
 }
 .videoo
 {
@@ -78,11 +78,13 @@
 }
 .btnCheck
 {
-    margin-left: 1000px;
-    width: 120px;
-    height: 35px;
+    padding:10px 20px;
     border-radius: 10px;
     color: white;
     background-color: #2980b9;
     border-color: #2980b9;
+    transition: all ease-in-out 0.4s;
+}
+.btnCheck:hover{
+    background-color: #3498db;
 }

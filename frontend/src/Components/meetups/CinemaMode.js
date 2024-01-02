@@ -35,15 +35,15 @@ function Reservation(props) {
   if (props.role === "F") {
     console.log(`the first count is: ${global.countofseats}`);
     content = (
-      <div style={{ marginTop: "-3%", width: "20%" }}>
+      <div style={{display:"flex" , alignItems: "center", gap: "20px" , marginLeft: "100px" , marginTop: "30px"}}>
         <button
           className="btnCheck"
           onClick={GoBackHandler}
-          style={{ marginBottom: "7%" }}
+          style = {{fontWeight: "bold"}}
         >
           Go Back
         </button>
-        <button className="btnCheck" onClick={Purchasehandler}>
+        <button className="btnCheck" onClick={Purchasehandler} style = {{fontWeight : "bold"}}>
           Purchase
         </button>
       </div>
@@ -79,7 +79,8 @@ function Reservation(props) {
           </button>
         </Modal.Footer>
       </Modal>
-      <div className="container main-box">
+      <div style = {{position : "relative"}}>
+        <h1 style = {{color : "white" , fontWeight: "bold" , position: "absolute" , top: "-150px" , marginLeft: "70px"}}>Stadium Seats</h1>
         <div className="chairs">
           {arr.map((user) => (
             <Container no={props.seatsPerRow} row={user} role={props.role}>

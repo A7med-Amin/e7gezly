@@ -85,52 +85,57 @@ function BouhgtTickets(props) {
   }
 
     return (
-        <li className={classes.item}>
-            <Card>
-                <div className={classes.Teams} style={{paddingBottom: '20px' , height: '15vh'}}>
-                    <img src={props.match.H_team.link} alt={props.match.H_team.name} />
-                    <h3 className= {classes.vs}>VS</h3>
-                    <img src={props.match.A_team.link} alt={props.match.A_team.name} />
-                    
-                </div>
-                <div className={`${classes.content} ${classes.divaya}`}>
-                    <div className={`${classes.content} ${classes.subcontent}`}>
-                        <h5 className={classes.info}>Stadium</h5>
-                        <address className={classes.Time}>{props.match.stadium}</address>
-                    </div>
-                    <div className={`${classes.content} ${classes.subcontent}`}>
-                        <h5 className={classes.info} >Date</h5>
-                        <address className={classes.Time}>{props.match.date}</address>
-                    </div>
-                    <div className={`${classes.content} ${classes.subcontent}`}>
-                        <h5 className={classes.info}>Seat</h5>
-                        <address className={classes.Time}>{alphabet[props.row]}{props.seat}</address>
-                    </div>
-                </div>
-
-        <div className={`${classes.content} ${classes.divaya}`}>
-          <div className={`${classes.content} ${classes.subcontent}`}>
-            <h5 className={classes.info}>Time</h5>
-            <address className={classes.Time}>{props.match.time}</address>
+      <li className={classes.itemTickets}>
+        <div className="boughtTickets">
+          <div
+            className={classes.Teams}
+            style={{ paddingBottom: "20px", height: "15vh" }}
+          >
+            <img src={props.match.H_team.link} alt={props.match.H_team.name} />
+            <h3 className={classes.vs}>VS</h3>
+            <img src={props.match.A_team.link} alt={props.match.A_team.name} />
           </div>
-          <div className={`${classes.content} ${classes.subcontent}`}>
-            <h5 className={classes.info}>Ticket ID</h5>
-            <address className={classes.Time}>{props.id}</address>
+          <div className={`${classes.content} ${classes.divaya}`}>
+            <div className={`${classes.content} ${classes.subcontent}`}>
+              <h5 className={classes.info}>Stadium</h5>
+              <address className={classes.Time}>{props.match.stadium}</address>
+            </div>
+            <div className={`${classes.content} ${classes.subcontent}`}>
+              <h5 className={classes.info}>Date</h5>
+              <address className={classes.Time}>{props.match.date}</address>
+            </div>
+            <div className={`${classes.content} ${classes.subcontent}`}>
+              <h5 className={classes.info}>Seat</h5>
+              <address className={classes.Time}>
+                {alphabet[props.row]}
+                {props.seat}
+              </address>
+            </div>
+          </div>
+
+          <div className={`${classes.content} ${classes.divaya}`}>
+            <div className={`${classes.content} ${classes.subcontent}`}>
+              <h5 className={classes.info}>Time</h5>
+              <address className={classes.Time}>{props.match.time}</address>
+            </div>
+            <div className={`${classes.content} ${classes.subcontent}`}>
+              <h5 className={classes.info}>Ticket ID</h5>
+              <address className={classes.Time}>{props.id}</address>
+            </div>
+          </div>
+
+          <div className={classes.actions}>
+            <button className="btn" onClick={buyHandler}>
+              Remove
+            </button>
+            {modalIsOpen && (
+              <Modal onCancel={closeModalHandler} onConfirm={ConfirmRemove} />
+            )}
+            {modalIsOpen && <Backdrop oncCancel={closeModalHandler} />}
           </div>
         </div>
-
-        <div className={classes.actions}>
-          <button className="btn" onClick={buyHandler}>
-            Remove
-          </button>
-          {modalIsOpen && (
-            <Modal onCancel={closeModalHandler} onConfirm={ConfirmRemove} />
-          )}
-          {modalIsOpen && <Backdrop oncCancel={closeModalHandler} />}
-        </div>
-      </Card>
-    </li>
-  );
+      </li>
+    );
 }
 
 export default BouhgtTickets;

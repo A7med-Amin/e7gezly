@@ -109,10 +109,29 @@
     background-color: #4a69bd;
     color: white;
   }
-
   .divaya
   {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+  }
+  .boughtTickets{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 30px;
+    width: 100%
+  }
+  .itemTickets{
+    margin: 1rem 0;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 40vw;
+  }
+  @media only screen and (min-width: 400px) and (max-width: 949px){
+    .itemTickets{
+      width: 80vw;
+    }
   }

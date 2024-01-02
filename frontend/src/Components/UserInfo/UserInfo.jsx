@@ -166,7 +166,7 @@ const UserInfo = (props) => {
           </button>
         </Modal.Footer>
       </Modal>
-      <Card>
+      <div className="profileCard">
         <form className="form" onSubmit={submitHandler}>
           <div className="control">
             <label htmlFor="username">
@@ -373,7 +373,7 @@ const UserInfo = (props) => {
             <button>Update</button>
           </div>
         </form>
-      </Card>
+      </div>
     </>
   );
 };

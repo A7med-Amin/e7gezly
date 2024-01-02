@@ -4,7 +4,7 @@ import Reservation from "../Components/meetups/CinemaMode";
 import Spinner from "react-bootstrap/Spinner";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
-
+import Layout from "../Components/layout/Layout";
 function Seats() {
   const history = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
@@ -65,12 +65,13 @@ function Seats() {
   return (
     <section
       style={{
-        backgroundImage:
-          "url('https://dissingweitling.com/assets/upload/_landscape1200/DissingWeitling_lusailbridges_render-night.jpg')",
         height: "100vh",
         overflow: "hidden",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background:
+          "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6), black)",
       }}
     >
       <Modal

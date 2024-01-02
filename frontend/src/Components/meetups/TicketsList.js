@@ -3,7 +3,7 @@ import classes from './MeetupList.module.css';
 
 function TicketsList(props) {
   return (
-    <ul className={classes.list}>
+    <ul className={classes.userTickets}>
       {props.meetups.map((meetup) => (
         <BouhgtTickets
           id={meetup.id}  // Match ID Est5dmha zy ma heya

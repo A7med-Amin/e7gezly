@@ -8,6 +8,8 @@ function Creditcard(props) {
   const navigate = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
   const [modalError, setModalError] = useState("");
+  const [creditCardNumber , setCreditCardNumber] = useState("")
+  const [creditPinNumber , setCreditPinNumber] = useState("")
   var LoggedIn = localStorage.getItem("LoggedIn");
   LoggedIn = JSON.parse(LoggedIn);
 
@@ -39,13 +41,23 @@ function Creditcard(props) {
 
   function confirmReserve(event) {
     event.preventDefault();
-    for (let i = 0; i < global.arrreserved.length; i++) {
-      if (global.arrreserved[i].seat_status === true) {
-        console.log(global.arrreserved[i]);
-        Fetching(global.arrreserved[i]);
+    const creditNumber = /^[0-9]+$/.test(creditCardNumber);
+    const pinNumber = /^[0-9]+$/.test(creditPinNumber);
+    if (!creditNumber) {
+      setModalVisible(true);
+      setModalError("Please enter a numeric value for a credit card");
+    } else if (!pinNumber) {
+      setModalVisible(true);
+      setModalError("Please enter a numeric value for a Pin number");
+    } else {
+      for (let i = 0; i < global.arrreserved.length; i++) {
+        if (global.arrreserved[i].seat_status === true) {
+          console.log(global.arrreserved[i]);
+          Fetching(global.arrreserved[i]);
+        }
       }
+      navigate("/YourTickets");
     }
-    navigate("/YourTickets");
   }
 
   return (
@@ -71,8 +83,18 @@ function Creditcard(props) {
           </button>
         </Modal.Footer>
       </Modal>
-      <div className="conte">
-        <form action="" style={{ marginTop: "40px" }} onSubmit={confirmReserve}>
+      <div
+        className="conte"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6), black)",
+        }}
+      >
+        <form
+          action=""
+          style={{ marginTop: "40px", borderRadius: "20px" }}
+          onSubmit={confirmReserve}
+        >
           <div style={{ marginTop: "-120px" }}>
             <img
               src="https://www.visa.ca/dam/VCOM/regional/na/canada/card-products/images/visa-gold-card-800x450.jpg"
@@ -86,16 +108,24 @@ function Creditcard(props) {
               type="text"
               className="card-number-input"
               required
-              minLength={14}
-              maxLength={14}
+              minLength={16}
+              maxLength={16}
+              onChange={(e) => setCreditCardNumber(e.target.value)}
             />
           </div>
           <div className="inputBox">
-            <span>Card Holder</span>
-            <input type="text" className="card-holder-input" required />
+            <span>PIN Number</span>
+            <input
+              type="text"
+              className="card-holder-input"
+              required
+              onChange={(e) => setCreditPinNumber(e.target.value)}
+              minLength={4}
+              maxLength={4}
+            />
           </div>
           <div className="flexbox">
-            <div className="inputBox">
+            {/* <div className="inputBox">
               <span>Expiration MM</span>
               <select required name="" id="" className="month-input">
                 <option value="month" selected disabled>
@@ -114,8 +144,8 @@ function Creditcard(props) {
                 <option value="11">11</option>
                 <option value="12">12</option>
               </select>
-            </div>
-            <div className="inputBox">
+            </div> */}
+            {/* <div className="inputBox">
               <span>Expiration YY</span>
               <select required name="" id="" className="year-input">
                 <option value="year" selected disabled>
@@ -132,8 +162,8 @@ function Creditcard(props) {
                 <option value="2029">2029</option>
                 <option value="2030">2030</option>
               </select>
-            </div>
-            <div className="inputBox">
+            </div> */}
+            {/* <div className="inputBox">
               <span>CVV</span>
               <input
                 type="text"
@@ -142,7 +172,7 @@ function Creditcard(props) {
                 className="cvv-input"
                 required
               />
-            </div>
+            </div> */}
           </div>
           <input type="submit" value="submit" className="submit-btn" />
         </form>
