@@ -28,30 +28,50 @@ function Seats() {
 
   useEffect(() => {
     setIsLoading(true);
+
+    fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
+      .then((response) => {
+        if (response.status === 405) {
+          setModalVisible(true);
+          setModalError("The date is old");
+          history("/Matches");
+        } else {
+          return response.json();
+        }
+      })
+      .then((data) => {
+        const meetups = [];
+
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+
+          meetups.push(meetup);
+        }
+
+        setIsLoading(false);
+        setLoadedMeetups(meetups);
+      });
+
     setInterval(() => {
       fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
         .then((response) => {
           if (response.status === 405) {
-            setModalVisible(true);
-            setModalError("The date is old");
-            history("/Matches");
           } else {
             return response.json();
           }
         })
         .then((data) => {
           const meetups = [];
-
           for (const key in data) {
             const meetup = {
               id: key,
               ...data[key],
             };
-
             meetups.push(meetup);
           }
-
-          setIsLoading(false);
           setLoadedMeetups(meetups);
         });
     }, 1000);
