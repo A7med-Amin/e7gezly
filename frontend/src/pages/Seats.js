@@ -27,8 +27,9 @@ function Seats() {
   }
 
   useEffect(() => {
+    localStorage.setItem("count_of_seats", 0);
+
     setIsLoading(true);
-    console.log(global.countofseats);
     fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
       .then((response) => {
         if (response.status === 405) {
@@ -50,7 +51,6 @@ function Seats() {
 
           meetups.push(meetup);
         }
-        console.log(global.countofseats);
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
@@ -58,20 +58,30 @@ function Seats() {
     const fetchData = async () => {
       const response = fetch(
         `${process.env.REACT_APP_API_URL}api/seats/${matchID}`
-      ).then((data) => {
-        const meetups = [];
+      )
+        .then((response) => {
+          if (response.status === 405) {
+            // setModalVisible(true);
+            // setModalError("The date is old");
+            // history("/Matches");
+          } else {
+            return response.json();
+          }
+        })
+        .then((data) => {
+          const meetups = [];
 
-        for (const key in data) {
-          const meetup = {
-            id: key,
-            ...data[key],
-          };
+          for (const key in data) {
+            const meetup = {
+              id: key,
+              ...data[key],
+            };
 
-          meetups.push(meetup);
-        }
-        setIsLoading(false);
-        setLoadedMeetups(meetups);
-      });
+            meetups.push(meetup);
+          }
+          setIsLoading(false);
+          setLoadedMeetups(meetups);
+        });
     };
 
     fetchData();
