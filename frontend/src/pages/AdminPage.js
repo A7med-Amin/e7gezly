@@ -3,10 +3,16 @@ import AdminContent from "../Components/meetups/AdminContent";
 
 function Adminstrator(props)
 {
-    return(
-        <section style={{marginTop:"80px", backgroundColor:'white' }}>
-            <AdminContent />
-        </section>
+    return (
+      <section
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6), black)",
+          overflow: "hidden",
+        }}
+      >
+        <AdminContent />
+      </section>
     );
 }
 

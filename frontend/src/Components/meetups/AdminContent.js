@@ -66,7 +66,7 @@ function AdminContent(props) {
       </Modal>
       <div
         className="container"
-        style={{ backgroundColor: "#2c3e50", color: "white" }}
+        style={{color: "white" }}
       >
         <div>
           <div className="card-body" style={{ color: "white" }}>
@@ -74,14 +74,14 @@ function AdminContent(props) {
               <Link
                 to="/"
                 className="btn btn-success"
-                style={{ marginLeft: "1100px", marginTop: "3%" }}
+                style={{marginTop: "3%" }}
               >
                 Log Out
               </Link>
             </div>
             <table
               className="table table-bordered"
-              style={{ color: "#ecf0f1" }}
+              style={{ color: "#ecf0f1"}}
             >
               <thead className="bg-dark text-white">
                 <tr>
