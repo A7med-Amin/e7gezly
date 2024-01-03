@@ -54,6 +54,16 @@
     color: #143c82;
   }
 
+  .refclass{
+    width: 100%;
+    height: 4rem;
+    overflow: hidden;
+    /* display: flex;
+    flex-wrap: nowrap; */
+    margin: auto;
+    text-align: center;
+  }
+
   .LinesMan{
     width: 100%;
     height: 4rem;
