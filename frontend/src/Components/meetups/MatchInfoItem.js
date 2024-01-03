@@ -92,7 +92,7 @@ function MatchInfoItem(props) {
                         <address className={classes.Time}>{props.time}</address>
                     </div>
 
-                    <h5 className={classes.info}>Referees</h5>
+                    <h5 className={`${classes.info} ${classes.refclass}`}>Referees</h5>
                     <div className={`${classes.LinesMan} ${classes.divaya}`}>
                         <address className={classes.Time}>{props.refree}</address>
                         <address className={classes.Time}>{props.line1}</address>
