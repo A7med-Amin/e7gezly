@@ -8,8 +8,8 @@ function Creditcard(props) {
   const navigate = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
   const [modalError, setModalError] = useState("");
-  const [creditCardNumber , setCreditCardNumber] = useState("")
-  const [creditPinNumber , setCreditPinNumber] = useState("")
+  const [creditCardNumber, setCreditCardNumber] = useState("");
+  const [creditPinNumber, setCreditPinNumber] = useState("");
   var LoggedIn = localStorage.getItem("LoggedIn");
   LoggedIn = JSON.parse(LoggedIn);
 
@@ -50,12 +50,12 @@ function Creditcard(props) {
       setModalVisible(true);
       setModalError("Please enter a numeric value for a Pin number");
     } else {
-      const newArrReserved = JSON.parse(localStorage.getItem("arrreserved") || '[]');
-      console.log('newArrReserved',newArrReserved);
-      for (let i = 0; i < newArrReserved.length; i++) {
-        if (newArrReserved[i].seat_status === true) {
-          console.log(newArrReserved[i]);
-          Fetching(newArrReserved[i]);
+      const user_seats = JSON.parse(localStorage.getItem("user_seats", []));
+      console.log("user_seats", user_seats);
+      for (let i = 0; i < user_seats.length; i++) {
+        if (user_seats[i].seat_status === true) {
+          console.log(user_seats[i]);
+          Fetching(user_seats[i]);
         }
       }
       navigate("/Home");

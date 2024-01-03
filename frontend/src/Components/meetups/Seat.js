@@ -7,7 +7,7 @@ function Seat(probes) {
 
   function btnhandler() {
     const countOfSeats = parseInt(localStorage.getItem("count_of_seats") || 0);
-    const newArrReserved = JSON.parse(localStorage.getItem("arrreserved") || '[]');
+    const user_seats = JSON.parse(localStorage.getItem("user_seats") || "[]");
 
     if (btnstate === false) {
       localStorage.setItem("count_of_seats", countOfSeats + 1);
@@ -16,24 +16,28 @@ function Seat(probes) {
     }
 
     setbtnstate((btnstate) => !btnstate);
-    for (let i = 0; i < newArrReserved.length; i++) {
+    for (let i = 0; i < user_seats.length; i++) {
+      // If seat is already reserved, remove it
       if (
-        newArrReserved[i].row === probes.rown &&
-        newArrReserved[i].seat === probes.coln
+        user_seats[i].row === probes.rown &&
+        user_seats[i].seat === probes.coln
       ) {
-        newArrReserved[i].seat_status = !btnstate;
+        user_seats.splice(i, 1);
+      }else{
+        user_seats.push({
+          row: probes.rown,
+          seat: probes.coln,
+          seat_status: btnstate,
+        });
       }
     }
 
-    localStorage.setItem("arrreserved", JSON.stringify(newArrReserved));
-    console.log(newArrReserved);
-    console.log(`the count is: ${localStorage.getItem("count_of_seats")}`);
-    console.log(`${probes.rown},${probes.coln}`);
+    localStorage.setItem("user_seats", JSON.stringify(user_seats));
   }
 
   let toggleclass = btnstate ? " occupied" : null;
   useEffect(() => {
-    setbtnstate(probes.state);
+    // setbtnstate(probes.state);
   }, [probes.state]);
   return (
     <button
