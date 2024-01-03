@@ -51,13 +51,18 @@ function Creditcard(props) {
       setModalError("Please enter a numeric value for a Pin number");
     } else {
       const user_seats = JSON.parse(localStorage.getItem("user_seats", []));
-      console.log("user_seats", user_seats);
-      for (let i = 0; i < user_seats.length; i++) {
-        // if (user_seats[i].seat_status === true) {
-          console.log(user_seats[i]);
-          Fetching(user_seats[i]);
-        // }
+      const arrreserved = JSON.parse(localStorage.getItem("arrreserved"));
+      for(let i = 0; i < user_seats.length; i++) {
+        for (let j = 0; j < arrreserved.length; j++) {
+          if (user_seats[i].row === arrreserved[j].row && user_seats[i].seat === arrreserved[j].seat) {
+            arrreserved[j].seat_status = true;
+          }
+        }
       }
+      for (let i = 0; i < arrreserved.length; i++) {
+        Fetching(arrreserved[i]);
+      }
+
       navigate("/Home");
     }
   }

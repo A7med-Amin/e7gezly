@@ -5,6 +5,25 @@ import Spinner from "react-bootstrap/Spinner";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import Layout from "../Components/layout/Layout";
+
+function remove_seat_from_users_seats(row, seat) {
+  const user_seats = JSON.parse(localStorage.getItem("user_seats") || "[]");
+
+  for (let j = 0; j < user_seats.length; j++) {
+    if (user_seats[j].row === row && user_seats[j].seat === seat) {
+      user_seats.splice(j, 1);
+      const countOfSeats = parseInt(
+        localStorage.getItem("count_of_seats") || 0
+      );
+
+      localStorage.setItem("count_of_seats", countOfSeats - 1);
+      break;
+    }
+  }
+
+  localStorage.setItem("user_seats", JSON.stringify(user_seats));
+}
+
 function Seats() {
   const history = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
@@ -74,6 +93,12 @@ function Seats() {
             };
             // meetup.seat_status = Math.random() < 0.5;
             meetups.push(meetup);
+          }
+          // Search for reserved seats and find reserved seats and mark them and remove from user seats
+          for (let i = 0; i < meetups.length; i++) {
+            if (meetups[i].seat_status === true) {
+              remove_seat_from_users_seats(meetups[i].row, meetups[i].seat);
+            }
           }
           localStorage.setItem("arrreserved", JSON.stringify(meetups));
           console.log(meetups);
