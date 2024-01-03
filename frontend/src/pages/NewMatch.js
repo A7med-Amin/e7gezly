@@ -22,18 +22,21 @@ function NewMatch() {
         console.log(meetupData);
         if (res.status === 403) {
           setModalVisible(true);
-          setModalError("There is a clashing match at same stadium");
+          setModalError("There is a refree having a match on same day");
+        }else if (res.status === 402) {
+          setModalVisible(true);
+          setModalError("There a match in the stadium on same day");
         } else if (res.status === 401) {
           setModalVisible(true);
           setModalError("Cant add a team already playing on same day");
         } else if (res.status === 400) {
           setModalVisible(true);
           setModalError(
-            "There is a match in the stadium starting at the same time"
+            "Invalid data provided, please check all fields and try again"
           );
         } else if (res.status === 405) {
           setModalVisible(true);
-          setModalError("The date is old");
+          setModalError("Old Date, please select a recent date");
         } else if (res.status === 500) {
           setModalVisible(true);
           setModalError("Error with server");

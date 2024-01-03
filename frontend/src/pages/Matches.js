@@ -8,7 +8,7 @@ function MatchesPage() {
 
   // pagination 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9; // Set the number of items per page
+  const itemsPerPage = 10; // Set the number of items per page
 
 
   // fetching
