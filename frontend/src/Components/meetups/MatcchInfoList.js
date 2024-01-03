@@ -3,7 +3,7 @@ import classes from './MeetupList.module.css';
 
 function MatchInfoList(props) {
   return (
-    <ul className={classes.list}>
+    <div className={classes.container}>
       {props.meetups.map((meetup) => (
         <MatchInfoItem
           // key={meetup.id}
@@ -18,7 +18,7 @@ function MatchInfoList(props) {
           line2={meetup.line2}
         />
       ))}
-    </ul>
+    </div>
   );
 }
 

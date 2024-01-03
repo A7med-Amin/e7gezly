@@ -63,7 +63,7 @@ function MatchInfoItem(props) {
     }
 
     return (
-        <li className={classes.item}>
+        <div >
             <Card>
                 <div className={classes.image}>
                     <img src={props.H_team.link} alt={props.H_team.name} />
@@ -103,7 +103,7 @@ function MatchInfoItem(props) {
                 <WhatUser />
 
             </Card>
-        </li>
+        </div>
     );
 }
 
