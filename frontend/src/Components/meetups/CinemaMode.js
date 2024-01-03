@@ -9,8 +9,6 @@ function Reservation(props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [modalError, setModalError] = useState("");
   const navigate = useNavigate();
-  global.arrreserved = props.matchData;
-  console.log(global.arrreserved);
   function Purchasehandler() {
     console.log(`The purchase: ${localStorage.getItem("count_of_seats")}`);
     if (localStorage.getItem("count_of_seats") > 0) navigate("/creditCard");
@@ -32,7 +30,9 @@ function Reservation(props) {
   let content;
 
   if (props.role === "F") {
-    console.log(`the first count is: ${localStorage.getItem("count_of_seats")}`);
+    console.log(
+      `the first count is: ${localStorage.getItem("count_of_seats")}`
+    );
     content = (
       <div
         style={{

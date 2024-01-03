@@ -12,7 +12,6 @@ function Seats() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
-
   const { state } = useLocation();
   const { matchID, rows, seats_per_row } = state; // Read values passed on state
 
@@ -28,7 +27,6 @@ function Seats() {
 
   useEffect(() => {
     localStorage.setItem("count_of_seats", 0);
-
     setIsLoading(true);
     fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
       .then((response) => {
@@ -51,6 +49,7 @@ function Seats() {
 
           meetups.push(meetup);
         }
+        localStorage.setItem("arrreserved", JSON.stringify(meetups));
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
@@ -61,16 +60,13 @@ function Seats() {
       )
         .then((response) => {
           if (response.status === 405) {
-            // setModalVisible(true);
-            // setModalError("The date is old");
-            // history("/Matches");
+
           } else {
             return response.json();
           }
         })
         .then((data) => {
           const meetups = [];
-
           for (const key in data) {
             const meetup = {
               id: key,
