@@ -50,6 +50,7 @@ function Seats() {
           meetups.push(meetup);
         }
         localStorage.setItem("arrreserved", JSON.stringify(meetups));
+        console.log(meetups);
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
@@ -60,7 +61,6 @@ function Seats() {
       )
         .then((response) => {
           if (response.status === 405) {
-
           } else {
             return response.json();
           }
@@ -72,9 +72,11 @@ function Seats() {
               id: key,
               ...data[key],
             };
-
+            // meetup.seat_status = Math.random() < 0.5;
             meetups.push(meetup);
           }
+          localStorage.setItem("arrreserved", JSON.stringify(meetups));
+          console.log(meetups);
           setIsLoading(false);
           setLoadedMeetups(meetups);
         });
@@ -125,12 +127,14 @@ function Seats() {
           </button>
         </Modal.Footer>
       </Modal>
-      <Reservation
-        no={rows}
-        seatsPerRow={seats_per_row}
-        role={TheRole}
-        matchData={loadedMeetups}
-      />
+      {loadedMeetups && (
+        <Reservation
+          no={rows}
+          seatsPerRow={seats_per_row}
+          role={TheRole}
+          matchData={loadedMeetups}
+        />
+      )}
     </section>
   );
 }

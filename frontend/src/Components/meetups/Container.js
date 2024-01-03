@@ -2,6 +2,7 @@ import "./container.css";
 import Seat from "./Seat";
 import "../../pages/Globalvariable";
 import "../../pages/Globalvariable2";
+import { useEffect } from "react";
 function Container(propes) {
   const newArrReserved = JSON.parse(
     localStorage.getItem("arrreserved") || "[]"
@@ -11,26 +12,25 @@ function Container(propes) {
   for (var i = 0; i < propes.no; i++) {
     arr.push(i);
   }
-
+  useEffect(() => {}, [newArrReserved]);
   return (
     <div className="rows balls">
-      {arr.map(
-        (user) => (
-          newArrReserved.map((items) => {
-            items.row === propes.row && items.seat === user
-              ? (global.statee = items.seat_status)
-              : (items.seat_status = items.seat_status);
-          }),
-          (
-            <Seat
-              rown={propes.row}
-              coln={user}
-              state={global.statee}
-              role={propes.role}
-            ></Seat>
-          )
-        )
-      )}
+      {arr.map((user) => {
+        let state = null;
+        newArrReserved.forEach((items) => {
+          if (items.row === propes.row && items.seat === user) {
+            state = items.seat_status;
+          }
+        });
+        return (
+          <Seat
+            rown={propes.row}
+            coln={user}
+            state={state}
+            role={propes.role}
+          ></Seat>
+        );
+      })}
     </div>
   );
 }

@@ -2,11 +2,17 @@ import "./container.css";
 import { useNavigate } from "react-router-dom";
 import Container from "./Container";
 import "../../pages/Globalvariable";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
+import Seat from "./Seat";
 
 function Reservation(props) {
+
   const [modalVisible, setModalVisible] = useState(false);
+  const newArrReserved = JSON.parse(
+    localStorage.getItem("arrreserved") || "[]"
+  );
+
   const [modalError, setModalError] = useState("");
   const navigate = useNavigate();
   function Purchasehandler() {
@@ -66,7 +72,9 @@ function Reservation(props) {
       </button>
     );
   }
+  useEffect(() => {
 
+  },[props.matchData])
   return (
     <>
       <Modal
@@ -103,8 +111,8 @@ function Reservation(props) {
           Stadium Seats
         </h1>
         <div className="chairs">
-          {arr.map((user) => (
-            <Container no={props.seatsPerRow} row={user} role={props.role}>
+          {arr.map((row) => (
+            <Container no={props.seatsPerRow} row={row} role={props.role}>
               {" "}
             </Container>
           ))}

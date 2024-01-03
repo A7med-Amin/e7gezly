@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./container.css";
 import "../../pages/Globalvariable";
 import "../../pages/Globalvariable2";
@@ -32,7 +32,9 @@ function Seat(probes) {
   }
 
   let toggleclass = btnstate ? " occupied" : null;
-
+  useEffect(() => {
+    setbtnstate(probes.state);
+  }, [probes.state]);
   return (
     <button
       disabled={
