@@ -6,15 +6,12 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 
 function Reservation(props) {
-  global.countofseats = 0;
   const [modalVisible, setModalVisible] = useState(false);
   const [modalError, setModalError] = useState("");
   const navigate = useNavigate();
-  global.arrreserved = props.matchData;
-
   function Purchasehandler() {
-    console.log(`The purchase: ${global.countofseats}`);
-    if (global.countofseats > 0) navigate("/creditCard");
+    console.log(`The purchase: ${localStorage.getItem("count_of_seats")}`);
+    if (localStorage.getItem("count_of_seats") > 0) navigate("/creditCard");
     else {
       setModalVisible(true);
       setModalError("You Should Select at least 1 chair to purchase");
@@ -33,17 +30,31 @@ function Reservation(props) {
   let content;
 
   if (props.role === "F") {
-    console.log(`the first count is: ${global.countofseats}`);
+    console.log(
+      `the first count is: ${localStorage.getItem("count_of_seats")}`
+    );
     content = (
-      <div style={{display:"flex" , alignItems: "center", gap: "20px" , marginLeft: "100px" , marginTop: "30px"}}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "20px",
+          marginLeft: "100px",
+          marginTop: "30px",
+        }}
+      >
         <button
           className="btnCheck"
           onClick={GoBackHandler}
-          style = {{fontWeight: "bold"}}
+          style={{ fontWeight: "bold" }}
         >
           Go Back
         </button>
-        <button className="btnCheck" onClick={Purchasehandler} style = {{fontWeight : "bold"}}>
+        <button
+          className="btnCheck"
+          onClick={Purchasehandler}
+          style={{ fontWeight: "bold" }}
+        >
           Purchase
         </button>
       </div>
@@ -79,8 +90,18 @@ function Reservation(props) {
           </button>
         </Modal.Footer>
       </Modal>
-      <div style = {{position : "relative"}}>
-        <h1 style = {{color : "white" , fontWeight: "bold" , position: "absolute" , top: "-150px" , marginLeft: "70px"}}>Stadium Seats</h1>
+      <div style={{ position: "relative" }}>
+        <h1
+          style={{
+            color: "white",
+            fontWeight: "bold",
+            position: "absolute",
+            top: "-150px",
+            marginLeft: "70px",
+          }}
+        >
+          Stadium Seats
+        </h1>
         <div className="chairs">
           {arr.map((user) => (
             <Container no={props.seatsPerRow} row={user} role={props.role}>

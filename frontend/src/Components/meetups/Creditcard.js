@@ -50,10 +50,12 @@ function Creditcard(props) {
       setModalVisible(true);
       setModalError("Please enter a numeric value for a Pin number");
     } else {
-      for (let i = 0; i < global.arrreserved.length; i++) {
-        if (global.arrreserved[i].seat_status === true) {
-          console.log(global.arrreserved[i]);
-          Fetching(global.arrreserved[i]);
+      const newArrReserved = JSON.parse(localStorage.getItem("arrreserved") || '[]');
+      console.log('newArrReserved',newArrReserved);
+      for (let i = 0; i < newArrReserved.length; i++) {
+        if (newArrReserved[i].seat_status === true) {
+          console.log(newArrReserved[i]);
+          Fetching(newArrReserved[i]);
         }
       }
       navigate("/Home");

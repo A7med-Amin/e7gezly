@@ -12,7 +12,6 @@ function Seats() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
-
   const { state } = useLocation();
   const { matchID, rows, seats_per_row } = state; // Read values passed on state
 
@@ -27,8 +26,8 @@ function Seats() {
   }
 
   useEffect(() => {
+    localStorage.setItem("count_of_seats", 0);
     setIsLoading(true);
-
     fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
       .then((response) => {
         if (response.status === 405) {
@@ -50,15 +49,18 @@ function Seats() {
 
           meetups.push(meetup);
         }
-
+        localStorage.setItem("arrreserved", JSON.stringify(meetups));
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
 
-    setInterval(() => {
-      fetch(`${process.env.REACT_APP_API_URL}api/seats/${matchID}`)
+    const fetchData = async () => {
+      const response = fetch(
+        `${process.env.REACT_APP_API_URL}api/seats/${matchID}`
+      )
         .then((response) => {
           if (response.status === 405) {
+
           } else {
             return response.json();
           }
@@ -70,11 +72,17 @@ function Seats() {
               id: key,
               ...data[key],
             };
+
             meetups.push(meetup);
           }
+          setIsLoading(false);
           setLoadedMeetups(meetups);
         });
-    }, 1000);
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   if (isLoading) {
