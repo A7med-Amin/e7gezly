@@ -23,15 +23,12 @@ function Seat(probes) {
         user_seats[i].seat === probes.coln
       ) {
         user_seats.splice(i, 1);
-      }else{
-        user_seats.push({
-          row: probes.rown,
-          seat: probes.coln,
-          seat_status: btnstate,
-        });
+        localStorage.setItem("user_seats", JSON.stringify(user_seats));
+
+        return;
       }
     }
-
+    user_seats.push({ row: probes.rown, seat: probes.coln, seat_status: !btnstate });
     localStorage.setItem("user_seats", JSON.stringify(user_seats));
   }
 

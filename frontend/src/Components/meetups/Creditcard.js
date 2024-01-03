@@ -53,10 +53,10 @@ function Creditcard(props) {
       const user_seats = JSON.parse(localStorage.getItem("user_seats", []));
       console.log("user_seats", user_seats);
       for (let i = 0; i < user_seats.length; i++) {
-        if (user_seats[i].seat_status === true) {
+        // if (user_seats[i].seat_status === true) {
           console.log(user_seats[i]);
           Fetching(user_seats[i]);
-        }
+        // }
       }
       navigate("/Home");
     }
