@@ -50,7 +50,7 @@ function Seats() {
           meetups.push(meetup);
         }
         localStorage.setItem("arrreserved", JSON.stringify(meetups));
-        console.log(meetups);
+        localStorage.setItem("user_seats", []);
         setIsLoading(false);
         setLoadedMeetups(meetups);
       });
